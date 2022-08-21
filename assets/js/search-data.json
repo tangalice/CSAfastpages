@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Title",
-            "content": "",
-            "url": "https://tangalice.github.io/alicetang/2022/08/20/JupyterNotebook.html",
-            "relUrl": "/2022/08/20/JupyterNotebook.html",
+            "title": "Jupyter Notebook",
+            "content": "msg1 = &quot;Hello World&quot; msg2 = &quot;I&#39;m Alice&quot; print(msg1) print(msg2) . Hello World I&#39;m Alice .",
+            "url": "https://tangalice.github.io/alicetang/fastpages/jupyter/2022/08/20/JupyterNotebook.html",
+            "relUrl": "/fastpages/jupyter/2022/08/20/JupyterNotebook.html",
             "date": " • Aug 20, 2022"
         }
         
