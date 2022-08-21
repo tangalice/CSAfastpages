@@ -13,11 +13,11 @@
   
     
         ,"post1": {
-            "title": "Jupyter Notebook",
+            "title": "Python Jupyter Notebook",
             "content": "msg1 = &quot;Hello World&quot; msg2 = &quot;I&#39;m Alice&quot; print(msg1) print(msg2) . Hello World I&#39;m Alice .",
-            "url": "https://tangalice.github.io/alicetang/fastpages/jupyter/2022/08/20/JupyterNotebook.html",
-            "relUrl": "/fastpages/jupyter/2022/08/20/JupyterNotebook.html",
-            "date": " • Aug 20, 2022"
+            "url": "https://tangalice.github.io/alicetang/fastpages/jupyter/2022/08/21/JupyterNotebook.html",
+            "relUrl": "/fastpages/jupyter/2022/08/21/JupyterNotebook.html",
+            "date": " • Aug 21, 2022"
         }
         
     
