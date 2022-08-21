@@ -6,6 +6,6 @@ categories: [markdown]
 title: My First Post
 ---
 
-## Hi There!
+## Hello!
 
-This is my first post! I'm Alice. 
+I've used Markdown quite a bit over the years... especially in Mr. Mortensen's classes. I remember staying up and fixing the README to get more points on our assignments.
