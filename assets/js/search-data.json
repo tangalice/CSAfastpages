@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "TT 1.0 Tools and Equipment",
-            "content": "Part 1 : Fastpages . Python Jupyter Notebook | Java Jupyter Notebook | . . FastPages Insights | . Part 2 : Java Project . . Java Project Minor Change Commit | CSA Project Insights | . Ticket Issue #1 .",
+            "content": "Hacks . Part 1 Fastpages . Python Jupyter Notebook | Java Jupyter Notebook | | FastPages Insights | . Part 2 Java Project . . Java Project Minor Change Commit | CSA Project Insights | . Ticket Issue #1 .",
             "url": "https://tangalice.github.io/alicetang/markdown/2022/08/21/TT1.html",
             "relUrl": "/markdown/2022/08/21/TT1.html",
             "date": " • Aug 21, 2022"
@@ -15,8 +15,8 @@
         ,"post1": {
             "title": "Python Jupyter Notebook",
             "content": "msg1 = &quot;Hello&quot; msg2 = &quot;I&#39;m Alice&quot; print(msg1) print(msg2) . Hello I&#39;m Alice .",
-            "url": "https://tangalice.github.io/alicetang/fastpages/jupyter/2022/08/21/PythonJupyterNotebook.html",
-            "relUrl": "/fastpages/jupyter/2022/08/21/PythonJupyterNotebook.html",
+            "url": "https://tangalice.github.io/alicetang/python/jupyter/2022/08/21/PythonJupyterNotebook.html",
+            "relUrl": "/python/jupyter/2022/08/21/PythonJupyterNotebook.html",
             "date": " • Aug 21, 2022"
         }
         
@@ -26,8 +26,8 @@
         ,"post2": {
             "title": "Java Jupyter Notebook",
             "content": "public class HelloWorld { public static void main(String[] args) { System.out.println(&quot;Hello&quot;); System.out.println(&quot;My name is Alice!&quot;); } } HelloWorld.main(null) . Hello My name is Alice! .",
-            "url": "https://tangalice.github.io/alicetang/fastpages/jupyter/2022/08/21/JavaJupyterNotebook.html",
-            "relUrl": "/fastpages/jupyter/2022/08/21/JavaJupyterNotebook.html",
+            "url": "https://tangalice.github.io/alicetang/java/jupyter/2022/08/21/JavaJupyterNotebook.html",
+            "relUrl": "/java/jupyter/2022/08/21/JavaJupyterNotebook.html",
             "date": " • Aug 21, 2022"
         }
         
