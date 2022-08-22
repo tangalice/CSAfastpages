@@ -1,11 +1,26 @@
 ---
 toc: true
 layout: post
-description: First post
+description: TT 1.0 Tools and Hacks Assignment
 categories: [markdown]
-title: My First Post
+title: TT 1.0 Tools and Equipment
 ---
 
-## Hi There!
+# Hacks
 
-This is my first post! I'm Alice. 
+## Part 1 Fastpages
+
+- [Python Jupyter Notebook](https://tangalice.github.io/alicetang/fastpages/jupyter/2022/08/21/PythonJupyterNotebook.html)
+- [Java Jupyter Notebook](https://tangalice.github.io/alicetang/fastpages/jupyter/2022/08/21/JavaJupyterNotebook.html)
+- ![]({{ site.baseurl }}/images/vscode-fastpage.png "Fastpage Project Running on VSCode")
+- [FastPages Insights](https://github.com/tangalice/alicetang/pulse)
+
+
+## Part 2 Java Project
+
+![]({{ site.baseurl }}/images/java-spring2.png "Java Spring Portfolio on Localhost")
+
+- [Java Project Minor Change Commit](https://github.com/tangalice/CSAproject/commit/2e127d4d755f88eebbbac8bf8319de8a936cdfb5)
+- [CSA Project Insights](https://github.com/tangalice/CSAproject/pulse)
+
+[Ticket Issue #1]()
