@@ -18,9 +18,9 @@ title: TT 1.0 Tools and Equipment
 
 ## Part 2 Java Project
 
-![]({{ site.baseurl }}/images/java-spring2.png "Java Spring Portfolio on Localhost")
+![]({{ site.baseurl }}/images/javaproject.png "Java Spring Portfolio on Localhost")
 
 - [Java Project Minor Change Commit](https://github.com/tangalice/CSAproject/commit/2e127d4d755f88eebbbac8bf8319de8a936cdfb5)
 - [CSA Project Insights](https://github.com/tangalice/CSAproject/pulse)
 
-[Ticket Issue #1]()
+[Ticket Issue #1](https://github.com/tangalice/alicetang/issues/2)
