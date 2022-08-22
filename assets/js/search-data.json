@@ -14,7 +14,7 @@
     
         ,"post1": {
             "title": "Python Jupyter Notebook",
-            "content": "msg1 = &quot;Hello World&quot; msg2 = &quot;I&#39;m Alice&quot; print(msg1) print(msg2) . Hello World I&#39;m Alice .",
+            "content": "msg1 = &quot;Hello&quot; msg2 = &quot;I&#39;m Alice&quot; print(msg1) print(msg2) . Hello I&#39;m Alice .",
             "url": "https://tangalice.github.io/alicetang/fastpages/jupyter/2022/08/21/PythonJupyterNotebook.html",
             "relUrl": "/fastpages/jupyter/2022/08/21/PythonJupyterNotebook.html",
             "date": " • Aug 21, 2022"
