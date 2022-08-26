@@ -73,6 +73,22 @@
   
 
   
+      ,"page3": {
+          "title": "Notes",
+          "content": "##Notes .",
+          "url": "https://tangalice.github.io/alicetang/notes/",
+          "relUrl": "/notes/",
+          "date": ""
+      }
+      
+  
+
+  
+  
+
+  
+
+  
   
 
   
@@ -81,18 +97,13 @@
   
 
   
-
-  
   
 
   
   
 
   
-  
-
-  
-      ,"page10": {
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://tangalice.github.io/alicetang/robots.txt",
