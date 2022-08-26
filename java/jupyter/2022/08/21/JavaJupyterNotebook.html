@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      7 min read
     
 </span></p>
 
@@ -146,19 +146,15 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="c1">// Alice Tang Lab Assignment 9 - Tic-Tac-Toe</span>
-
-<span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.lang.Math</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Foothill</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AvgCalculator</span>
 <span class="p">{</span>  
    <span class="c1">//Constants</span>
-   <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">MIN_VALUE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-   <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">MAX_VALUE</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-   <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">char</span> <span class="n">MIN_SYMBOL</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
-   <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">char</span> <span class="n">MAX_SYMBOL</span> <span class="o">=</span><span class="sc">'Z'</span><span class="p">;</span>
-   <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">char</span> <span class="n">DEFAULT_SYMBOL</span> <span class="o">=</span> <span class="sc">' '</span><span class="p">;</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="n">MIN_VALUE</span> <span class="o">=</span> <span class="mf">1.00</span><span class="p">;</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="n">MAX_VALUE</span> <span class="o">=</span> <span class="mf">100.00</span><span class="p">;</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">END_VALUE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
    
    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
    <span class="p">{</span>
@@ -242,32 +238,48 @@ window.onload = wrap_img;
    <span class="p">}</span>
    
    <span class="c1">// foothill methods---------------------------------------------------</span>
-   <span class="c1">// method getting symbol for each user</span>
-   <span class="kd">static</span> <span class="kt">char</span> <span class="nf">symbolFromUser</span><span class="p">()</span>
+   <span class="c1">// method getting grade from user</span>
+   <span class="kd">static</span> <span class="kt">double</span> <span class="nf">gradeFromUser</span><span class="p">()</span>
    <span class="p">{</span>
       <span class="n">String</span> <span class="n">userInputStr</span><span class="p">;</span>
       <span class="n">Scanner</span> <span class="n">inputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
       
       <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
       <span class="p">{</span>
-         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"What is the symbol for a player?"</span><span class="p">);</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Enter a grade: (1-100, 0 to stop)"</span><span class="p">);</span>
          <span class="n">userInputStr</span>  <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
-         <span class="kt">char</span> <span class="n">s</span> <span class="o">=</span> <span class="n">userInputStr</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-         <span class="k">if</span> <span class="p">(</span><span class="n">validSym</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+         <span class="kt">double</span> <span class="n">grd</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">validGrd</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
          <span class="p">{</span>
-            <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">g</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">endGrd</span><span class="p">(</span><span class="n">g</span><span class="p">)){</span>
+            <span class="k">return</span> <span class="n">g</span><span class="p">;</span>
          <span class="p">}</span>
          <span class="k">else</span>
          <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"please input a capital letter"</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"please input a number between 0 and 100"</span><span class="p">);</span>
          <span class="p">}</span>
       <span class="p">}</span>
    <span class="p">}</span>  
    
-   <span class="c1">//method that checks if symbol is valid or not</span>
-   <span class="kd">private</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">validSym</span><span class="p">(</span> <span class="kt">char</span> <span class="n">sym</span> <span class="p">)</span> 
+   <span class="c1">//method that checks if grade inputted is valid or not (1-100)</span>
+   <span class="kd">private</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">validGrd</span><span class="p">(</span> <span class="kt">double</span> <span class="n">grd</span> <span class="p">)</span> 
    <span class="p">{</span>
-      <span class="k">if</span> <span class="p">((</span><span class="n">sym</span> <span class="o">&gt;=</span> <span class="n">MIN_SYMBOL</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">sym</span> <span class="o">&lt;=</span> <span class="n">MAX_SYMBOL</span><span class="p">))</span>
+      <span class="k">if</span> <span class="p">((</span><span class="n">grd</span> <span class="o">&gt;=</span> <span class="n">MIN_VALUE</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">grd</span> <span class="o">&lt;=</span> <span class="n">MAX_VALUE</span><span class="p">))</span>
+      <span class="p">{</span>
+         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+      <span class="p">}</span>  
+      <span class="k">else</span>
+      <span class="p">{</span>
+         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+
+   <span class="c1">//method that checks to stop inputting grades (0)</span>
+   <span class="kd">private</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">endGrd</span><span class="p">(</span> <span class="kt">int</span> <span class="n">grd</span> <span class="p">)</span> 
+   <span class="p">{</span>
+      <span class="k">if</span> <span class="p">((</span><span class="n">grd</span> <span class="o">==</span> <span class="n">END_VALUE</span><span class="p">))</span>
       <span class="p">{</span>
          <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
       <span class="p">}</span>  
@@ -277,108 +289,7 @@ window.onload = wrap_img;
       <span class="p">}</span>
    <span class="p">}</span>
    
-   <span class="c1">//method that sets all spaces in board to default (blank)</span>
-   <span class="kd">static</span> <span class="kt">void</span> <span class="nf">resetBoard</span><span class="p">(</span><span class="n">Player</span><span class="o">[][]</span> <span class="n">board</span><span class="p">,</span> <span class="n">Player</span> <span class="n">p</span><span class="p">)</span>   
-   <span class="p">{</span>
-      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-      <span class="p">{</span>
-         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-         <span class="p">{</span>
-            <span class="n">board</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">.</span><span class="na">setSym</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">getSym</span><span class="p">());</span>    
-         <span class="p">}</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
-   
-   <span class="c1">//method that replaces specific spot on board with player symbol</span>
-   <span class="kd">static</span> <span class="kt">void</span> <span class="nf">makeAMove</span><span class="p">(</span><span class="n">Player</span><span class="o">[][]</span> <span class="n">board</span><span class="p">,</span> <span class="n">Player</span> <span class="n">p</span><span class="p">)</span>
-   <span class="p">{</span>
-      <span class="kt">int</span> <span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-      
-      <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-      <span class="p">{</span>
-         <span class="n">row</span> <span class="o">=</span> <span class="n">getInputPos</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">p</span><span class="p">);</span> <span class="c1">//row is 0</span>
-         <span class="n">col</span> <span class="o">=</span> <span class="n">getInputPos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="p">);</span> <span class="c1">//column is 1</span>
-         
-         <span class="k">if</span> <span class="p">(</span><span class="n">board</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span><span class="p">.</span><span class="na">getSym</span><span class="p">()</span> <span class="o">==</span> <span class="n">DEFAULT_SYMBOL</span><span class="p">)</span>
-         <span class="p">{</span>
-            <span class="n">board</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span><span class="p">.</span><span class="na">setSym</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">getSym</span><span class="p">());</span>
-            <span class="k">break</span><span class="p">;</span>
-         <span class="p">}</span>
-      <span class="p">}</span>  
-   <span class="p">}</span>
-   
-   <span class="c1">//method that collects position input and checks it</span>
-   <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getInputPos</span><span class="p">(</span><span class="kt">int</span> <span class="n">rowcol</span><span class="p">,</span> <span class="n">Player</span> <span class="n">p</span><span class="p">)</span>
-   <span class="p">{</span>
-      <span class="kt">int</span> <span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-      <span class="n">String</span> <span class="n">userInputStr</span><span class="p">;</span>
-      <span class="n">Scanner</span> <span class="n">inputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-      
-      <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-      <span class="p">{</span>
-         <span class="k">if</span> <span class="p">(</span><span class="n">rowcol</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="c1">//row is 0</span>
-         <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Enter a row (0, 1, or 2) for player "</span>
-               <span class="o">+</span><span class="n">p</span><span class="p">.</span><span class="na">getSym</span><span class="p">()</span><span class="o">+</span><span class="s">": "</span><span class="p">);</span>
-         <span class="p">}</span>
-         <span class="k">else</span> <span class="c1">//column is 1</span>
-         <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Enter a column (0, 1, or 2) for player "</span>
-               <span class="o">+</span><span class="n">p</span><span class="p">.</span><span class="na">getSym</span><span class="p">()</span><span class="o">+</span><span class="s">": "</span><span class="p">);</span>
-         <span class="p">}</span>
-         <span class="n">userInputStr</span>  <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
-         <span class="n">pos</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
-         <span class="k">if</span> <span class="p">((</span><span class="n">pos</span> <span class="o">&gt;=</span> <span class="n">MIN_VALUE</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">pos</span> <span class="o">&lt;=</span> <span class="n">MAX_VALUE</span><span class="p">))</span>
-         <span class="p">{</span>
-            <span class="k">return</span> <span class="n">pos</span><span class="p">;</span>
-         <span class="p">}</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
-   
-   <span class="c1">//method that displays board grid</span>
-   <span class="kd">static</span> <span class="kt">void</span> <span class="nf">displayBoard</span><span class="p">(</span><span class="n">Player</span><span class="o">[][]</span> <span class="n">board</span><span class="p">)</span>
-   <span class="p">{</span>
-      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-      <span class="p">{</span>
-         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n----------"</span><span class="p">);</span>
-         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-         <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"| "</span><span class="o">+</span><span class="n">board</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">.</span><span class="na">getSym</span><span class="p">());</span> 
-         <span class="p">}</span>
-         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"|"</span><span class="p">);</span>
-      <span class="p">}</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n----------\n"</span><span class="p">);</span>
-   <span class="p">}</span>
-   
-   <span class="c1">//checks if a player has won or not</span>
-   <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isWin</span><span class="p">(</span><span class="n">Player</span><span class="o">[][]</span> <span class="n">board</span><span class="p">,</span> <span class="n">Player</span> <span class="n">p</span><span class="p">)</span>
-   <span class="p">{</span>
-      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//loop to check rows</span>
-      <span class="p">{</span>
-         <span class="k">if</span> <span class="p">(</span><span class="n">checkSame</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
-         <span class="p">{</span>
-            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-         <span class="p">}</span>
-      <span class="p">}</span>
-      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//loop to check columns</span>
-      <span class="p">{</span>
-         <span class="k">if</span> <span class="p">(</span><span class="n">checkSame</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
-         <span class="p">{</span>
-            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-         <span class="p">}</span>
-      <span class="p">}</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">checkSame</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span> <span class="c1">//checks diagonal</span>
-      <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">checkSame</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span> <span class="c1">//checks diagonal</span>
-      <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-   <span class="p">}</span>
-   
-   <span class="c1">//method that checks if winning positions are all the same player</span>
+   <span class="c1">//method that calculates </span>
    <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">checkSame</span><span class="p">(</span><span class="n">Player</span><span class="o">[][]</span> <span class="n">board</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c2</span><span class="p">,</span> 
       <span class="kt">int</span> <span class="n">r3</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c3</span><span class="p">,</span> <span class="n">Player</span> <span class="n">p</span><span class="p">)</span>
    <span class="p">{</span>
@@ -409,110 +320,6 @@ window.onload = wrap_img;
          <span class="p">}</span>
       <span class="p">}</span>
       <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">Player</span>
-<span class="p">{</span> 
-   <span class="c1">//private members</span>
-   <span class="kd">private</span> <span class="kt">char</span> <span class="n">symbol</span><span class="p">;</span>
-   <span class="kd">private</span> <span class="kt">int</span> <span class="n">wins</span><span class="p">;</span>
-   
-   <span class="c1">//public constants</span>
-   <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">MAX_WINS</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-   <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">char</span> <span class="n">MIN_SYMBOL</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
-   <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">char</span> <span class="n">MAX_SYMBOL</span> <span class="o">=</span><span class="sc">'Z'</span><span class="p">;</span>
-   <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">DEFAULT_WINS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-   <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">char</span> <span class="n">DEFAULT_SYMBOL</span> <span class="o">=</span> <span class="sc">' '</span><span class="p">;</span>
-   
-   <span class="c1">//default constructor</span>
-   <span class="n">Player</span><span class="p">()</span>
-   <span class="p">{</span>
-      <span class="n">setDefaults</span><span class="p">();</span>
-   <span class="p">}</span>
-   
-   <span class="c1">//constructor that takes parameters</span>
-   <span class="n">Player</span><span class="p">(</span><span class="kt">char</span> <span class="n">sym</span><span class="p">)</span>
-   <span class="p">{</span>
-      <span class="n">setSym</span><span class="p">(</span><span class="n">sym</span><span class="p">);</span>
-      <span class="n">wins</span> <span class="o">=</span> <span class="n">DEFAULT_WINS</span><span class="p">;</span>
-   <span class="p">}</span>
-   
-   <span class="c1">// Mutators and Accessors for the private members----------------------</span>
-   <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">setSym</span><span class="p">(</span><span class="kt">char</span> <span class="n">sym</span><span class="p">)</span> 
-   <span class="p">{</span>
-      <span class="kt">boolean</span> <span class="n">status</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">validSym</span><span class="p">(</span><span class="n">sym</span><span class="p">)</span> <span class="o">||</span> <span class="n">sym</span> <span class="o">==</span> <span class="n">DEFAULT_SYMBOL</span><span class="p">)</span>
-      <span class="p">{</span>
-         <span class="n">symbol</span> <span class="o">=</span> <span class="n">sym</span><span class="p">;</span>
-         <span class="n">status</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="k">return</span> <span class="n">status</span><span class="p">;</span>
-   <span class="p">}</span>
-   
-   <span class="kd">public</span> <span class="kt">char</span> <span class="nf">getSym</span><span class="p">()</span>
-   <span class="p">{</span>
-      <span class="k">return</span> <span class="n">symbol</span><span class="p">;</span>
-   <span class="p">}</span>
-      
-   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getWins</span><span class="p">()</span>
-   <span class="p">{</span>
-      <span class="k">return</span> <span class="n">wins</span><span class="p">;</span>
-   <span class="p">}</span>
-     
-   <span class="kt">void</span> <span class="nf">setDefaults</span><span class="p">()</span>
-   <span class="p">{</span>
-      <span class="n">symbol</span> <span class="o">=</span> <span class="n">DEFAULT_SYMBOL</span><span class="p">;</span>
-      <span class="n">wins</span> <span class="o">=</span> <span class="n">DEFAULT_WINS</span><span class="p">;</span>
-   <span class="p">}</span>
-   
-   <span class="c1">//------------------------------------------------------------------</span>
-   
-   <span class="c1">// private methods to check if Symbol and Wins are valid</span>
-   <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">validSym</span><span class="p">(</span> <span class="kt">char</span> <span class="n">sym</span> <span class="p">)</span> 
-   <span class="p">{</span>
-      <span class="k">if</span> <span class="p">((</span><span class="n">sym</span> <span class="o">&gt;=</span> <span class="n">MIN_SYMBOL</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">sym</span> <span class="o">&lt;=</span> <span class="n">MAX_SYMBOL</span><span class="p">))</span>
-      <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="p">}</span>  
-      <span class="k">else</span>
-      <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
-   
-   <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">validWins</span><span class="p">(</span> <span class="kt">int</span> <span class="n">wins</span> <span class="p">)</span> 
-   <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">wins</span> <span class="o">&gt;</span> <span class="n">MAX_WINS</span><span class="p">)</span>
-      <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-      <span class="p">}</span>  
-      <span class="k">else</span>
-      <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
-      
-   <span class="c1">//------------------------------------------------------------------</span>
-   
-   <span class="c1">//method that increases number of wins for player by 1</span>
-   <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">addWin</span><span class="p">()</span>
-   <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">validWins</span><span class="p">(</span><span class="n">wins</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-      <span class="p">{</span>
-         <span class="n">wins</span><span class="o">++</span><span class="p">;</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="k">else</span>
-      <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-      <span class="p">}</span>  
-   <span class="p">}</span>
-   
-   <span class="c1">//method that resets player's number of wins</span>
-   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">resetWins</span><span class="p">()</span>
-   <span class="p">{</span>
-      <span class="n">wins</span> <span class="o">=</span> <span class="n">DEFAULT_WINS</span><span class="p">;</span>
    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
