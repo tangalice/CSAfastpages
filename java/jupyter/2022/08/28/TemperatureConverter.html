@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -157,11 +157,11 @@ window.onload = wrap_img;
    
    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
    <span class="p">{</span>
-        <span class="n">String</span> <span class="n">userInputStr</span><span class="p">;</span>
-        <span class="kt">char</span> <span class="n">endReply</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">tempType</span><span class="p">;</span>
-        <span class="kt">double</span> <span class="n">celcius</span><span class="p">,</span> <span class="n">farenheit</span><span class="p">,</span> <span class="n">kelvin</span><span class="p">;</span>
-        <span class="kt">boolean</span> <span class="n">end</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">userInputStr</span><span class="p">;</span>     <span class="c1">//temporary String variable to hold String input from user</span>
+        <span class="kt">char</span> <span class="n">endReply</span><span class="p">;</span>    <span class="c1">// yes or no so y/n is fitting</span>
+        <span class="kt">int</span> <span class="n">tempType</span><span class="p">;</span>      <span class="c1">// 1 or 2 to describe the type of conversion </span>
+        <span class="kt">double</span> <span class="n">celcius</span><span class="p">,</span> <span class="n">farenheit</span><span class="p">,</span> <span class="n">kelvin</span><span class="p">;</span>       <span class="c1">//temperature will have decimals</span>
+        <span class="kt">boolean</span> <span class="n">end</span><span class="p">;</span>            <span class="c1">//boolean (true/false) to end while loop</span>
         <span class="n">Scanner</span> <span class="n">inputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
         
         <span class="c1">// initialize variables</span>
@@ -201,13 +201,13 @@ window.onload = wrap_img;
             <span class="c1">//conversion</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">tempType</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//convert to farenheit</span>
             <span class="p">{</span>
-                <span class="n">farenheit</span> <span class="o">=</span> <span class="p">(</span><span class="n">celcius</span><span class="o">*</span><span class="mf">1.8</span><span class="p">)</span><span class="o">+</span><span class="mi">32</span><span class="p">;</span> 
+                <span class="n">farenheit</span> <span class="o">=</span> <span class="p">(</span><span class="n">celcius</span><span class="o">*</span><span class="mf">1.8</span><span class="p">)</span><span class="o">+</span><span class="mi">32</span><span class="p">;</span>   <span class="c1">//multiple by 1.8 and then add 32, result is a double</span>
                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">FCONVERT</span> <span class="o">+</span><span class="s">": "</span><span class="p">);</span>
                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">farenheit</span><span class="p">);</span>
             <span class="p">}</span>
             <span class="k">else</span>   <span class="c1">//convert to kelvin</span>
             <span class="p">{</span>
-                <span class="n">kelvin</span> <span class="o">=</span> <span class="n">celcius</span> <span class="o">+</span> <span class="mf">273.15</span><span class="p">;</span>
+                <span class="n">kelvin</span> <span class="o">=</span> <span class="n">celcius</span> <span class="o">+</span> <span class="mf">273.15</span><span class="p">;</span>    <span class="c1">//add 273.15, result is a double</span>
                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">KCONVERT</span> <span class="o">+</span><span class="s">": "</span><span class="p">);</span>
                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">kelvin</span><span class="p">);</span>
             <span class="p">}</span>
