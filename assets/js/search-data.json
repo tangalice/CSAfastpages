@@ -94,10 +94,10 @@
 
   
       ,"page1": {
-          "title": "TT",
-          "content": "TT 1.1 . TT 1.0 .",
-          "url": "https://tangalice.github.io/alicetang/TT/",
-          "relUrl": "/TT/",
+          "title": "About Me",
+          "content": "Hi my name is Alice and I am taking AP Computer Science A this year as a senior at Del Norte High School. .",
+          "url": "https://tangalice.github.io/alicetang/about/",
+          "relUrl": "/about/",
           "date": ""
       }
       
@@ -105,10 +105,10 @@
 
   
       ,"page2": {
-          "title": "About Me",
-          "content": "Hi my name is Alice and I am taking AP Computer Science A this year as a senior at Del Norte High School. .",
-          "url": "https://tangalice.github.io/alicetang/about/",
-          "relUrl": "/about/",
+          "title": "Hacks",
+          "content": "TT 1.1 . TT 1.0 .",
+          "url": "https://tangalice.github.io/alicetang/hacks/",
+          "relUrl": "/hacks/",
           "date": ""
       }
       
