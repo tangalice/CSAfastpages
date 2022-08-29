@@ -1,7 +1,7 @@
 ---
 layout: page
-title: TT
-permalink: /TT/
+title: Hacks
+permalink: /hacks/
 ---
 
 [TT 1.1](https://tangalice.github.io/alicetang/tt/2022/08/29/TT2.html)
