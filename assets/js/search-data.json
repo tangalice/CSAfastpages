@@ -130,7 +130,7 @@
   
       ,"page4": {
           "title": "Jupyter Notebooks",
-          "content": "Bash . Temperature Converter . Recipe Nutrition Calculator . Python Greeting .",
+          "content": "Temperature Converter . Recipe Nutrition Calculator . Bash . Python Greeting .",
           "url": "https://tangalice.github.io/alicetang/notebooks/",
           "relUrl": "/notebooks/",
           "date": ""
