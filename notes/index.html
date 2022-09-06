@@ -96,7 +96,48 @@ window.onload = wrap_img;
 <ul>
   <li>String</li>
   <li>Array</li>
-  <li>class</li>
+  <li>
+    <p>class</p>
+  </li>
+  <li>Constructors: methods with the same name as the class it is in. It is a speacial methods used to initialize objects. Here is a constructor that takes parameters inside of a class called ThreeString
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//constructor that takes parameters
+ ThreeString(String str1, String str2, String str3)
+ {
+    if (validString(str1) &amp;&amp; validString(str2) &amp;&amp; validString(str3))
+    {
+       string1 = str1;
+       string2 = str2;
+       string3 = str3;
+    }
+    else
+    {
+       string1 = DEFAULT_STRING;
+       string2 = DEFAULT_STRING;
+       string3 = DEFAULT_STRING;         
+    }
+ }
+</code></pre></div>    </div>
+  </li>
+  <li>Mutators: methods that mutate the value of a private member variable. Here the methods setString1 sets the value of a private member of the ThreeString class called string1
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public boolean setString1(String str) 
+ {
+    boolean status = false;
+    if (validString(str))
+    {
+       string1 = str;
+       status = true;
+    }
+    return status;
+ }
+</code></pre></div>    </div>
+  </li>
+  <li>Accessors: methods that accesses and returns the value of a private member variable. Here the getString1 method acesses and returns the value of the private member string1.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> public String getString1()
+ {
+    return string1;
+ }
+</code></pre></div>    </div>
+  </li>
 </ul>
 
 
