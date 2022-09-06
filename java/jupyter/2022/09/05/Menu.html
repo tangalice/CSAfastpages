@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      7 min read
     
 </span></p>
 
@@ -187,16 +187,52 @@ window.onload = wrap_img;
         <span class="n">sc</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
     <span class="p">}</span>
 
+    <span class="n">Scanner</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+    <span class="n">Scanner</span> <span class="n">inputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+    <span class="n">String</span> <span class="n">userInputStr</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">numofNum</span><span class="p">,</span> <span class="n">userNum</span><span class="p">,</span> <span class="n">fact</span><span class="p">,</span> <span class="n">tempType</span><span class="p">;</span>
+    <span class="kt">double</span>  <span class="n">celcius</span><span class="p">,</span> <span class="n">farenheit</span><span class="p">,</span> <span class="n">kelvin</span><span class="p">,</span> <span class="n">medianNum</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">endReply</span><span class="p">;</span> 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">REPORT</span> <span class="o">=</span> <span class="s">"\nFactorial of "</span><span class="p">;</span> 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">FCONVERT</span> <span class="o">=</span> <span class="s">"\nConverted to Farenheit: "</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KCONVERT</span> <span class="o">=</span> <span class="s">"\nConverted to Kelvin: "</span><span class="p">;</span>
+    
+
+    <span class="c1">//median</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">findMed</span><span class="p">(</span><span class="kt">double</span> <span class="n">arr</span><span class="o">[]</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// sort the array</span>
+        <span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+ 
+        <span class="c1">// check for even case</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">arr</span><span class="o">[</span><span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="o">]</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">(</span><span class="kt">double</span><span class="p">)(</span><span class="n">arr</span><span class="o">[</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">]</span> <span class="o">+</span> <span class="n">arr</span><span class="o">[</span><span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="o">]</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">//factorial</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">findFact</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+      <span class="p">{</span>
+         <span class="n">f</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">i</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="n">f</span><span class="p">;</span>
+    <span class="p">}</span>
+
     <span class="c1">// Print the menu options to Terminal</span>
     <span class="kd">private</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">//System.out.println commands below is used to present a Menu to the user. </span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"-------------------------\n"</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Choose from these choices"</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"-------------------------\n"</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"1 - Say Hello"</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"2 - Output colors"</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"3 - Loading in color"</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"4 - Say Merry X-Mas"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"1 - Factorial"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"2 - Temperature Converter"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"3 - Median"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"4 - Number Sort"</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"0 - Quit"</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"-------------------------\n"</span><span class="p">);</span>
     <span class="p">}</span>
@@ -210,29 +246,105 @@ window.onload = wrap_img;
                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Goodbye, World!"</span><span class="p">);</span>
                 <span class="n">quit</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
                 <span class="k">break</span><span class="p">;</span>
+                  
             <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Factorial "</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nInput an integer: "</span><span class="p">);</span>
+                <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+                <span class="n">userNum</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
+                <span class="n">fact</span> <span class="o">=</span> <span class="n">findFact</span><span class="p">(</span><span class="n">userNum</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">REPORT</span> <span class="o">+</span> <span class="n">userNum</span> <span class="o">+</span><span class="s">" is "</span><span class="o">+</span><span class="n">fact</span><span class="p">);</span>
                 <span class="k">break</span><span class="p">;</span>
+            
             <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
-                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">COLORS</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>  <span class="c1">// loop through COLORS array</span>
-                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">COLORS</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">ANSI</span><span class="o">]</span> <span class="o">+</span> <span class="n">COLORS</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">NAME</span><span class="o">]</span><span class="p">);</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Loading..."</span><span class="p">);</span>
-                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// fixed length loading bar</span>
-                    <span class="kt">int</span> <span class="n">random</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="n">COLORS</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>  <span class="c1">// random logic</span>
-                    <span class="k">try</span> <span class="p">{</span>
-                        <span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>  <span class="c1">// delay for loading</span>
-                    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+                <span class="c1">// initialize variables</span>
+                <span class="n">celcius</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">;</span>
+                <span class="n">farenheit</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">;</span>
+                <span class="n">kelvin</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">;</span>
+
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"This program converts degress in Celcius to Farenheit or Kelvin \n"</span><span class="p">);</span>
+                
+                <span class="c1">// get degress in celcius from user</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nTemperature in Celcius: "</span><span class="p">);</span>
+                <span class="n">userInputStr</span>  <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+                <span class="n">celcius</span> <span class="o">=</span> <span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">celcius</span><span class="p">);</span>
+
+                <span class="c1">// input from user, what do they want to convert to</span>
+                <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nConvert to (1)Farenheit or (2)Kelvin: "</span><span class="p">);</span>
+                    <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+                    <span class="n">tempType</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
+                    <span class="k">if</span> <span class="p">((</span><span class="n">tempType</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">tempType</span> <span class="o">==</span> <span class="mi">2</span><span class="p">))</span>
+                    <span class="p">{</span>
+                        <span class="k">break</span><span class="p">;</span>
                     <span class="p">}</span>
-                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">COLORS</span><span class="o">[</span><span class="n">random</span><span class="o">][</span><span class="n">ANSI</span><span class="o">]</span> <span class="o">+</span> <span class="s">"#"</span><span class="p">);</span>
+                    <span class="k">else</span>
+                    <span class="p">{</span>
+                        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">tempType</span><span class="p">);</span>
+                        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nPlease input either 1 or 2"</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">tempType</span><span class="p">);</span>
+
+                <span class="c1">//conversion</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">tempType</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//convert to farenheit</span>
+                <span class="p">{</span>
+                    <span class="n">farenheit</span> <span class="o">=</span> <span class="p">(</span><span class="n">celcius</span><span class="o">*</span><span class="mf">1.8</span><span class="p">)</span><span class="o">+</span><span class="mi">32</span><span class="p">;</span>   <span class="c1">//multiple by 1.8 and then add 32, result is a double</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">FCONVERT</span><span class="p">);</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">farenheit</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span>   <span class="c1">//convert to kelvin</span>
+                <span class="p">{</span>
+                    <span class="n">kelvin</span> <span class="o">=</span> <span class="n">celcius</span> <span class="o">+</span> <span class="mf">273.15</span><span class="p">;</span>    <span class="c1">//add 273.15, result is a double</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">KCONVERT</span><span class="p">);</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">kelvin</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">break</span><span class="p">;</span> 
+            
+            <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Median "</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nhow many values would you like to input?"</span><span class="p">);</span>
+                <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+                <span class="n">numofNum</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
+        
+                <span class="kt">double</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span> <span class="o">[</span><span class="n">numofNum</span><span class="o">]</span><span class="p">;</span> <span class="c1">//creates array with doubles, numofNum number of values in the array</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">numofNum</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>       <span class="c1">//gets info from user for each spot in array</span>
+                <span class="p">{</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nenter value: "</span><span class="p">);</span>
+                    <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+                    <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nMedian: "</span> <span class="o">+</span> <span class="n">findMed</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">));</span>
+                <span class="k">break</span><span class="p">;</span>
+
+            <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Number Sort "</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nhow many values would you like to input?"</span><span class="p">);</span>
+                <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+                <span class="n">numofNum</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
+        
+                <span class="kt">double</span><span class="o">[]</span> <span class="n">arr2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span> <span class="o">[</span><span class="n">numofNum</span><span class="o">]</span><span class="p">;</span>  <span class="c1">//creates array with doubles, numofNum number of values in the array</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">numofNum</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>       <span class="c1">//gets info from user for each spot in array</span>
+                <span class="p">{</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nenter value: "</span><span class="p">);</span>
+                    <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+                    <span class="n">arr2</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr2</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+                <span class="p">}</span>
+        
+                <span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">arr2</span><span class="p">);</span>   <span class="c1">//sort array</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n\nSorted Numbers: "</span><span class="p">);</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">numofNum</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>       <span class="c1">//prints each spot in array</span>
+                <span class="p">{</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr2</span><span class="o">[</span><span class="n">i</span><span class="o">]+</span> <span class="s">", "</span><span class="p">);</span>
                 <span class="p">}</span>
                 <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Merry Christmas!"</span><span class="p">);</span>
-                <span class="k">break</span><span class="p">;</span>    
-            <span class="k">default</span><span class="p">:</span>
+
+<span class="nl">            default:</span>
                 <span class="c1">//Prints error message from console</span>
                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Unexpected choice, try again."</span><span class="p">);</span>
         <span class="p">}</span>
@@ -243,6 +355,7 @@ window.onload = wrap_img;
     <span class="c1">// Static driver/tester method</span>
     <span class="kd">static</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>  <span class="p">{</span>  
         <span class="k">new</span> <span class="n">Menu</span><span class="p">();</span> <span class="c1">// starting Menu object</span>
+ 
     <span class="p">}</span>
 
 <span class="p">}</span>
@@ -264,15 +377,39 @@ window.onload = wrap_img;
 Choose from these choices
 -------------------------
 
-1 - Say Hello
-2 - Output colors
-3 - Loading in color
-4 - Say Merry X-Mas
+1 - Factorial
+2 - Temperature Converter
+3 - Median
+4 - Number Sort
 0 - Quit
 -------------------------
 
-4: Merry Christmas!
-4: Merry Christmas!
+1: Factorial 
+Input an integer: 
+Factorial of 7 is 5040
+2: This program converts degress in Celcius to Farenheit or Kelvin 
+
+Temperature in Celcius: 35.0
+Convert to (1)Farenheit or (2)Kelvin: 2
+Converted to Kelvin: 308.15
+3: Median 
+how many values would you like to input?
+enter value: 2.4
+enter value: 5.4
+enter value: 3.1
+enter value: 7.1
+enter value: 99.0
+Median: 5.4
+
+4: Number Sort 
+how many values would you like to input?
+enter value: 1.0
+enter value: 3.0
+enter value: 2.0
+enter value: 4.0
+
+Sorted Numbers: 
+1.0, 2.0, 3.0, 4.0, 
 0: Goodbye, World!
 </pre>
 </div>
