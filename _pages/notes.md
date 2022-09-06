@@ -25,7 +25,7 @@ Non-Primitive Java Data Types
 - class
 __________________________________________________________________________
 
-- Constructors: methods with the same name as the class it is in. It is a speacial methods used to initialize objects. Here is a constructor that takes parameters inside of a class called ThreeString [Exploration Code](https://tangalice.github.io/alicetang/java/jupyter/2022/09/04/ThreeString.html)
+- Constructors: methods with the same name as the class it is in. It is a speacial methods used to initialize objects. Here is a constructor that takes parameters inside of a class called ThreeString - [Exploration Code](https://tangalice.github.io/alicetang/java/jupyter/2022/09/04/ThreeString.html)
 ```
 //constructor that takes parameters
    ThreeString(String str1, String str2, String str3)
