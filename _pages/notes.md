@@ -23,7 +23,7 @@ Non-Primitive Java Data Types
 - String
 - Array
 - class
-
+__________________________________________________________________________
 
 - Constructors: methods with the same name as the class it is in. It is a speacial methods used to initialize objects. Here is a constructor that takes parameters inside of a class called ThreeString
 ```
