@@ -4,6 +4,8 @@ title: Jupyter Notebooks
 permalink: /notebooks/
 ---
 
+[Booleans and Ifs](https://tangalice.github.io/alicetang/java/jupyter/2022/09/10/Ifs.html)
+
 [Three String Class](https://tangalice.github.io/alicetang/java/jupyter/2022/09/04/ThreeString.html)
 
 [Menu](https://tangalice.github.io/alicetang/java/jupyter/2022/09/05/Menu.html)
