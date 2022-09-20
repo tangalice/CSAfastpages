@@ -72,6 +72,6 @@ __________________________________________________________________________
 Agile Methodology
 - The Agile methodology is a way to manage a project by breaking it up into several phases. It involves constant collaboration with stakeholders and continuous improvement at every stage.
 
-Agile Methodology Diagram Example
-https://www.nvisia.com/insights/agile-methodology![image](https://user-images.githubusercontent.com/89223922/191190338-202d538f-f2bd-4ac2-8103-ee748c1c15e8.png)
+Agile Methodology Diagram 
+![]({{ site.baseurl }}/images/agile.png "agile methodology diagram example")
 
