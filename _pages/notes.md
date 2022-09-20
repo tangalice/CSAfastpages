@@ -67,4 +67,9 @@ public boolean setString1(String str)
    }
 ```
 
+__________________________________________________________________________
 
+Agile Methodology
+- The Agile methodology is a way to manage a project by breaking it up into several phases. It involves constant collaboration with stakeholders and continuous improvement at every stage.
+
+Agile Methodology Diagram Example
