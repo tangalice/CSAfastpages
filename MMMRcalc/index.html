@@ -4,20 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Search | Alice’s fastpages</title>
+<title>Calculator | Alice’s fastpages</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Search" />
+<meta property="og:title" content="Calculator" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://tangalice.github.io/alicetang/search/" />
-<meta property="og:url" content="https://tangalice.github.io/alicetang/search/" />
+<link rel="canonical" href="https://tangalice.github.io/alicetang/MMMRcalc/" />
+<meta property="og:url" content="https://tangalice.github.io/alicetang/MMMRcalc/" />
 <meta property="og:site_name" content="Alice’s fastpages" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Search" />
+<meta property="twitter:title" content="Calculator" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Search","url":"https://tangalice.github.io/alicetang/search/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Calculator","url":"https://tangalice.github.io/alicetang/MMMRcalc/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/alicetang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tangalice.github.io/alicetang/feed.xml" title="Alice's fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/alicetang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -69,17 +69,84 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <!-- adapted from https://github.com/pmarsceill/just-the-docs -->
-<script type="text/javascript" src="/alicetang/assets/js/search.js"></script>
-<script type="text/javascript" src="/alicetang/assets/js/vendor/lunr.min.js"></script>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Javascript Mean Median Mode Range Calculator</title>
+</head>
 
-<div class="search">
-    <div class="search-input-wrap">
-    <input type="text" class="js-search-input search-input input-block form-control" tabindex="0" placeholder="Search Alice's fastpages" aria-label="Search Alice's fastpages" autocomplete="off">
-    </div>
-    <br>
-    <div class="js-search-results search-results-wrap"></div>
-</div>
+<body>
+    <h1>Mean, Median, Mode, and Range Calculator</h1>
+    <p>Put a Space in Between Each Number.</p>
+    <br/>
+    <input id="numbers" placeholder="Data">
+    <button id="submit" onclick="calculate();">Submit Data</button>
+</body>
+</html>
+
+<script>
+    function calculate() 
+    {
+        //Creating Array
+        var string = document.getElementById("numbers").value;
+        var array = string.split(" ")
+        for(var x=0; x < array.length; x++) { array[x] = +array[x]; }
+    
+        //Order
+        var order = array.sort(function(a, b){return a-b});
+    
+        //Mean
+        var sum = 0;
+        for(var x=0; x < array.length; x++) { sum = sum + array[x]; }
+        console.log(sum);
+        var mean = sum / array.length;
+    
+        //Median
+        var median = 0;
+        if (array.length % 2 === 0) 
+        { //Even
+            median = (array[array.length / 2 - 1] + array[array.length / 2]) / 2;
+        } 
+        else 
+        { //Odd
+            median = array[(array.length - 1) / 2];
+        }
+    
+        //Mode
+        var mode = [];
+        for(x=0; x < array.length; x++) 
+        {
+            if(array[x] === array[x + 1]) 
+            {
+                mode.push(array[x]);
+            }
+        }
+    
+        //Range
+        var length = array.length;
+        var range = array[length - 1] - array[0];
+    
+        if (mode == "") 
+        {
+            mode = "None";
+        }
+    
+        alert("Order: " + order);
+        alert("Range: " + range);
+        alert("Median: " + median);
+        alert("Mean: " + mean);
+        alert("Mode: " + mode);
+    }
+
+    document.getElementById("numbers").value = "";
+</script>
+
+<css>
+    body {
+        font-family: Arial;
+        margin-left: 30px;
+      }
+</css>
 
       </div>
     </main><footer class="site-footer h-card">
