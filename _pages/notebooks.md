@@ -4,6 +4,8 @@ title: Jupyter Notebooks
 permalink: /notebooks/
 ---
 
+[Fibonacci Class](https://tangalice.github.io/alicetang/java/jupyter/2022/09/25/Fibonacci.html)
+
 [2019 FRQ1](https://tangalice.github.io/alicetang/java/jupyter/2022/09/19/2019FRQ1.html)
 
 [2018 FRQ1](https://tangalice.github.io/alicetang/java/jupyter/2022/09/19/2018FRQ1.html)
