@@ -4,6 +4,10 @@ title: Jupyter Notebooks
 permalink: /notebooks/
 ---
 
+[Rapid API](https://tangalice.github.io/alicetang/java/jupyter/2022/09/30/API.html)
+
+[Arrays and Images](https://tangalice.github.io/alicetang/java/jupyter/2022/09/27/Images.html)
+
 [Javascript](https://tangalice.github.io/alicetang/javascript/jupyter/2022/09/25/Javascript.html)
 
 [Fibonacci Class](https://tangalice.github.io/alicetang/java/jupyter/2022/09/25/Fibonacci.html)
