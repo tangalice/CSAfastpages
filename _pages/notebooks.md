@@ -4,6 +4,8 @@ title: Jupyter Notebooks
 permalink: /notebooks/
 ---
 
+[Array Lists](https://tangalice.github.io/alicetang/java/jupyter/2022/10/09/ArrayLists.html)
+
 [Rapid API](https://tangalice.github.io/alicetang/java/jupyter/2022/09/30/API.html)
 
 [Arrays and Images](https://tangalice.github.io/alicetang/java/jupyter/2022/09/30/Images.html)
