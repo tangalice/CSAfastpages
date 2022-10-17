@@ -170,12 +170,72 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>HW: 2006 FRQ 1, 2a, 3a
-due monday</p>
+<h2 id="Homework">Homework<a class="anchor-link" href="#Homework"> </a></h2><p>2006 FRQ 2a, 3a   (due monday)</p>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>2 a)</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// returns the price of the item including the tax</span>
+ <span class="kd">public</span> <span class="kt">double</span> <span class="nf">purchasePrice</span><span class="p">()</span>
+ <span class="p">{</span>
+   <span class="k">return</span> <span class="n">getListPrice</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">taxRate</span><span class="p">);</span>
+ <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>3 a)</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// returns 0 when this customer is equal to other;</span>
+  <span class="c1">//   a positive integer when this customer is greater than other;</span>
+  <span class="c1">//   a negative integer when this customer is less than other</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareCustomer</span><span class="p">(</span><span class="n">Customer</span> <span class="n">other</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">getName</span><span class="p">().</span><span class="na">compareTo</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">diff</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="n">diff</span> <span class="o">=</span> <span class="n">getID</span><span class="p">()</span> <span class="o">-</span> <span class="n">other</span><span class="p">.</span><span class="na">getID</span><span class="p">();</span>
+    <span class="k">return</span> <span class="n">diff</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
