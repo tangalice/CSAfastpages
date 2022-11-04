@@ -4,6 +4,18 @@ title: Jupyter Notebooks
 permalink: /notebooks/
 ---
 
+[Arrays Lesson](https://tangalice.github.io/alicetang/java/jupyter/2022/10/25/ArrayLesson.html)
+
+[Classes Lesson](https://tangalice.github.io/alicetang/java/jupyter/2022/10/20/ClassesLesson.html)
+
+[Iteration Lesson](https://tangalice.github.io/alicetang/java/jupyter/2022/10/19/IterationLesson.html)
+
+[Goblin HW](https://tangalice.github.io/alicetang/java/jupyter/2022/10/14/GoblinHW.html)
+
+[OOP Lesson](https://tangalice.github.io/alicetang/java/jupyter/2022/10/13/OOPLesson.html)
+
+[Primitives Lesson](https://tangalice.github.io/alicetang/java/jupyter/2022/10/12/PrimitivesLesson.html)
+
 [Array Lists](https://tangalice.github.io/alicetang/java/jupyter/2022/10/09/ArrayLists.html)
 
 [Rapid API](https://tangalice.github.io/alicetang/java/jupyter/2022/09/30/API.html)
