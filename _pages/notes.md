@@ -75,3 +75,10 @@ Agile Methodology
 Agile Methodology Diagram 
 ![]({{ site.baseurl }}/images/agile.png "agile methodology diagram example")
 
+
+College Board Unit Notes
+- [Primitives Lesson](https://tangalice.github.io/alicetang/java/jupyter/2022/10/12/PrimitivesLesson.html)
+- [OOP Lesson](https://tangalice.github.io/alicetang/java/jupyter/2022/10/13/OOPLesson.html)
+- [Iteration Lesson](https://tangalice.github.io/alicetang/java/jupyter/2022/10/19/IterationLesson.html)
+- [Classes Lesson](https://tangalice.github.io/alicetang/java/jupyter/2022/10/20/ClassesLesson.html)
+- [Arrays Lesson](https://tangalice.github.io/alicetang/java/jupyter/2022/10/25/ArrayLesson.html)
