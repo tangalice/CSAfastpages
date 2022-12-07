@@ -143,35 +143,145 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introductions">Introductions<a class="anchor-link" href="#Introductions"> </a></h2><ul>
+<h3 id="Introductions">Introductions<a class="anchor-link" href="#Introductions"> </a></h3><ul>
 <li>A reference type</li>
 <li>Array cannot be modified while ArrayLists can change size dynamically</li>
 </ul>
-<h2 id="Methods">Methods<a class="anchor-link" href="#Methods"> </a></h2><ul>
+<h3 id="Methods">Methods<a class="anchor-link" href="#Methods"> </a></h3><ul>
 <li>add(int index, element) ...</li>
 </ul>
-<h2 id="Traversing-ArrayLists">Traversing ArrayLists<a class="anchor-link" href="#Traversing-ArrayLists"> </a></h2><ul>
+<h3 id="Traversing-ArrayLists">Traversing ArrayLists<a class="anchor-link" href="#Traversing-ArrayLists"> </a></h3><ul>
 <li>For Loop</li>
 <li>While Loop</li>
 <li>Enhanced ForLoop</li>
 </ul>
-<h2 id="Searching">Searching<a class="anchor-link" href="#Searching"> </a></h2><ul>
+<h3 id="Searching">Searching<a class="anchor-link" href="#Searching"> </a></h3><ul>
 <li>The locating of data within linear structures</li>
 <li>Searching a structure involves control structures - iterationnal and selection - loop with an if statement</li>
 <li>For loops are optimal for linear searching because each element needs to be specified sequentiallly with no need to track the index after its executed</li>
 <li>Order matters sometimes in searching</li>
 </ul>
-<h2 id="Sorting">Sorting<a class="anchor-link" href="#Sorting"> </a></h2><ul>
+<h3 id="Sorting">Sorting<a class="anchor-link" href="#Sorting"> </a></h3><ul>
 <li>Sorting sorts the ArrayList in a specified order (ascending or descending)</li>
 <li>Collections.sort[(list.name)] - sort in ascending order</li>
 <li>Collections.sort[(ArrayList,Collections.reverseOrder())] - sort in ascending order</li>
 </ul>
-<h2 id="HW">HW<a class="anchor-link" href="#HW"> </a></h2><p>Create an ArrayList that includes 2 of the 4 factors listed below.</p>
-<p>Sort an ArrayList in descending order and swap the first and last elements Find and display the hashCode of an Arraylist before and after being sorted Return "ascending" if the list is sorted in ascending order, return "descending" if it is descending, and return "neither" if neither Replace 3 elements in an ArrayList with another ArrayList and reverse the order of the new list</p>
+<h3 id="HW">HW<a class="anchor-link" href="#HW"> </a></h3><p>Create an ArrayList that includes 2 of the 4 factors listed below.</p>
+<p>-[x] Sort an ArrayList in descending order and swap the first and last elements 
+-[x] Find and display the hashCode of an Arraylist before and after being sorted 
+-[] Return "ascending" if the list is sorted in ascending order, return "descending" if it is descending, and return "neither" if neither 
+-[] Replace 3 elements in an ArrayList with another ArrayList and reverse the order of the new list</p>
 
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Collections</span><span class="p">;</span>
+
+<span class="c1">// initialize Array List with strings</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strlist</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="n">strlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">);</span>
+<span class="n">strlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;orange&quot;</span><span class="p">);</span>
+<span class="n">strlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;3&quot;</span><span class="p">);</span>
+<span class="n">strlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;yellow&quot;</span><span class="p">);</span>
+<span class="n">strlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;AX7&quot;</span><span class="p">);</span>
+<span class="n">strlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;blue98&quot;</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">strlist</span><span class="p">);</span>
+
+<span class="c1">// reverse order of array list</span>
+<span class="n">Collections</span><span class="p">.</span><span class="na">reverse</span><span class="p">(</span><span class="n">strlist</span><span class="p">);</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">swap</span><span class="p">(){</span>
+    <span class="n">String</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">strlist</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">lastindex</span> <span class="o">=</span> <span class="n">strlist</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> 
+    <span class="n">strlist</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">strlist</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">lastindex</span><span class="p">));</span>
+    <span class="n">strlist</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">lastindex</span><span class="p">,</span> <span class="n">temp</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;reversed list with first and last element switched: &quot;</span> <span class="o">+</span> <span class="n">strlist</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">swap</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[apple, orange, 3, yellow, AX7, blue98]
+reversed list with first and last element switched: [apple, AX7, yellow, 3, orange, blue98]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Collections</span><span class="p">;</span>
+
+<span class="c1">// initialize Array List with strings</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strlist</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="n">strlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">);</span>
+<span class="n">strlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;orange&quot;</span><span class="p">);</span>
+<span class="n">strlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;3&quot;</span><span class="p">);</span>
+<span class="n">strlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;yellow&quot;</span><span class="p">);</span>
+<span class="n">strlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;AX7&quot;</span><span class="p">);</span>
+<span class="n">strlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;blue98&quot;</span><span class="p">);</span>
+
+<span class="c1">// hashCode before sort</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Unsorted hashCode: &quot;</span> <span class="o">+</span> <span class="n">strlist</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span>
+
+<span class="c1">// hashCode after sort</span>
+<span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">strlist</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Sorted hashCode: &quot;</span> <span class="o">+</span> <span class="n">strlist</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Unsorted hashCode: 903531471
+Sorted hashCode: 1218882291
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
