@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -189,9 +189,9 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Arrays</span><span class="p">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Array</span><span class="p">{</span>
     <span class="kt">int</span><span class="o">[][]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">},{</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">},{</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">},{</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">}};</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="p">(){</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">(){</span>
         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numbers</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
             <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
@@ -199,10 +199,87 @@ window.onload = wrap_img;
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
         <span class="p">}</span>
     <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">reverse</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">){</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">askIndex</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+    
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;What row do you want? &quot;</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">rowIndex</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">rowIndex</span><span class="p">);</span>
+    
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;What col do you want? &quot;</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">colIndex</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">colIndex</span><span class="p">);</span>
+    
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numbers</span><span class="o">[</span><span class="n">rowIndex</span><span class="o">][</span><span class="n">colIndex</span><span class="o">]</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">multSum</span><span class="p">()</span> <span class="p">{</span> 
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numbers</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">a</span><span class="p">;</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;result: &quot;</span><span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+        <span class="n">Array</span> <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Array</span><span class="p">();</span>
+        <span class="n">array</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">array</span><span class="p">.</span><span class="na">reverse</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">array</span><span class="p">.</span><span class="na">askIndex</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">array</span><span class="p">.</span><span class="na">multSum</span><span class="p">();</span>
+    <span class="p">}</span>
 <span class="p">}</span>
+<span class="n">Array</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1 2 3 4 
+5 6 7 8 
+9 10 11 12 
+13 14 15 16 
+
+16 15 14 13 
+12 11 10 9 
+8 7 6 5 
+4 3 2 1 
+
+What row do you want? 2
+What col do you want? 3
+12
+
+result: 57264
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
