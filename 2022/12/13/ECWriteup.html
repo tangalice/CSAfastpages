@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>EC Writeup | Alice’s fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="EC Writeup" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Extra Credit Event Notes and Reflection" />
+<meta property="og:description" content="Extra Credit Event Notes and Reflection" />
+<link rel="canonical" href="https://tangalice.github.io/alicetang/2022/12/13/ECWriteup.html" />
+<meta property="og:url" content="https://tangalice.github.io/alicetang/2022/12/13/ECWriteup.html" />
+<meta property="og:site_name" content="Alice’s fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-13T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="EC Writeup" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-13T00:00:00-06:00","datePublished":"2022-12-13T00:00:00-06:00","description":"Extra Credit Event Notes and Reflection","headline":"EC Writeup","mainEntityOfPage":{"@type":"WebPage","@id":"https://tangalice.github.io/alicetang/2022/12/13/ECWriteup.html"},"url":"https://tangalice.github.io/alicetang/2022/12/13/ECWriteup.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/alicetang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tangalice.github.io/alicetang/feed.xml" title="Alice's fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/alicetang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/alicetang/">Alice&#39;s fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/alicetang/MMMRcalc/">Calculator</a><a class="page-link" href="/alicetang/about/">About Me</a><a class="page-link" href="/alicetang/hacks/">Hacks</a><a class="page-link" href="/alicetang/notebooks/">Jupyter Notebooks</a><a class="page-link" href="/alicetang/notes/">Notes</a><a class="page-link" href="/alicetang/search/">Search</a><a class="page-link" href="/alicetang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">EC Writeup</h1><p class="page-description">Extra Credit Event Notes and Reflection</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-12-13T00:00:00-06:00" itemprop="datePublished">
+        Dec 13, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="main-takeaways-and-reflection">Main Takeaways and Reflection</h2>
+<p>Even if you start off with a different career like Kathyleen did, it is not too late to switch to a career in tech. Kris struggled in his CS classes but that ultiamtely didn’t stop him. Career in tech can help you impact a lot of people (rewarding job). Kathyleen wasn’t satisfied with her one to one impact during her investment banking job. Tech career means you contribute to helping people/the greater good. It is also important to focus on continuous learning, never stop learning. Esepcially since tech industry is always advancing, you need to continoulsy expand your knowledge to keep up. Kris said every time he changed companies, he would need to learn more promgramming languages. Knowing only a couple programming languages is the bare minimum for a CS career. The things we learn in this class (CSA and CSP) are applicable; Kris used Rest APIs at his job at twitter. Application to me, achieving success and continously learning in CSA is the first step for a successful career in tech.</p>
+
+<h2 id="notes">Notes</h2>
+
+<h3 id="kathyleen-beveridge">Kathyleen Beveridge</h3>
+<p>Words to live by</p>
+<ul>
+  <li>Grateful that she works for company which makes a big impact on people</li>
+</ul>
+
+<p>Education</p>
+<ul>
+  <li>MBA, University of South California</li>
+  <li>BS Finance, Santa Clara University</li>
+  <li>Studied abroad in Spain</li>
+</ul>
+
+<p>Career and Journey</p>
+<ul>
+  <li>Wells Fargo, Nikko Securities, investment advisor
+    <ul>
+      <li>went back to school and switched careers (investment banking only really had one to one impact)</li>
+    </ul>
+  </li>
+  <li>First high tech job at HP</li>
+  <li>Qualcomm : Senior Manager Sales Operations and Director of Global Sales</li>
+  <li>ThermoFischer : senior director of marketing</li>
+</ul>
+
+<p>Company Mission Statments</p>
+<ul>
+  <li>HP: Create technology that makes life better for everyone, everywhere</li>
+  <li>Qualcomm: Inventing the tech everyone loves</li>
+  <li>Thermo Fisher Scientific: Enable our customers to make the world healthier, cleaner, and safer
+Similarities</li>
+  <li>Using tech for the good of the people, main idea is to help people, doing something that people want</li>
+  <li>Every tech company that she worked in, it had a macro, global impact on the people of the world
+    <ul>
+      <li>The product or service is life changing or generation changing</li>
+      <li>Qualcomm chips were in 99% of cell phones in the world</li>
+      <li>Everyday a billion people’s lives are impacted by Qualcomm technology!</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Currently</p>
+<ul>
+  <li>Senior director of marketing and commercial sales</li>
+  <li>Voice of sales, voice of customers</li>
+  <li>People work really closely with scrum master to commercialize the product</li>
+  <li>No matter what you are doing, she enjoys working with all the folks. She can’t do what others do</li>
+  <li>You can take a concept and build it and make it happen</li>
+</ul>
+
+<p>She has data scientist in her team</p>
+<ul>
+  <li>Join massive fragment data bases outside the company to predict customer demand and where the sales will be</li>
+  <li>They sell freezers</li>
+  <li>Databases predicted where the demand will be BEFORE customers place orders</li>
+</ul>
+
+<h3 id="kris-porter">Kris Porter</h3>
+<p>Words to live by</p>
+<ul>
+  <li>It doesn’t matter what you like at this age, you can have a tech career later on.</li>
+</ul>
+
+<p>Education</p>
+<ul>
+  <li>UCLA, Bachelors and Masters degree
+    <ul>
+      <li>no CS classes when he started</li>
+      <li>first CS class was second quarter of some year in college</li>
+      <li>Failed his first CS class; stopped after failure</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Career and Journey</p>
+<ul>
+  <li>NBC Universal, Streaming media infrastructure</li>
+  <li>Twitter
+    <ul>
+      <li>most of his team laid off</li>
+      <li>removte workers all kicked off</li>
+    </ul>
+  </li>
+  <li>Mysten Labs</li>
+</ul>
+
+<p>Learning Highlights</p>
+<ul>
+  <li>Continuous learning</li>
+  <li>CCNA training</li>
+  <li>Machine learning and Deep Learning</li>
+  <li>Python</li>
+  <li>Data Structures, Algorithms, Systems</li>
+  <li>Rest APIs in his job at twitter</li>
+  <li>Slowly movies to graph UL</li>
+</ul>
+
+<p>Agile Methodology</p>
+<ul>
+  <li>Technical perspective, different companies have their own version of agile, they use it depending on what they need</li>
+  <li>Qualcomm, 150 engineers, interacted with each other, planned all of the work for the quarter in a big meeting that last 2 day (good way to coordinate)</li>
+  <li>Agile is important</li>
+</ul>
+
+<p>Business landscape can change: Use Sprints</p>
+<ul>
+  <li>Gone are the days where projects take 6 months</li>
+  <li>What can we do in shorter time periods?</li>
+  <li>That skillset is highly regarding</li>
+</ul>
+
+<p>Machine Learning</p>
+<ul>
+  <li>Learn how to use python libraries</li>
+  <li>Use information on when to archive and delete repositories</li>
+  <li>To cut costs</li>
+</ul>
+
+<h3 id="questions">Questions</h3>
+<p>Most important skill to have in the tech industry:</p>
+<ul>
+  <li>Continuous learning
+    <ul>
+      <li>Not just learning a particular programming language, but to learn everything</li>
+      <li>Different companies have different stacks, everytime he moved companies he had to learn new programming languages</li>
+      <li>Everyone has different ways of doing things</li>
+    </ul>
+  </li>
+  <li>Don’t be super concerned about things you read on the news
+    <ul>
+      <li>In learning the skill to work with computers, that is self fulfilling</li>
+      <li>Start ups are a risk
+        <ul>
+          <li>Only risk is not learning (thats deep)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Be adaptive
+    <ul>
+      <li>Career path is zigzaggy</li>
+      <li>Dated herself for 35 years</li>
+      <li>Never thought she’d be doing what she’s doing</li>
+      <li>Best technical people
+        <ul>
+          <li>Listen to requirements</li>
+          <li>Translate it in terms of how the technology can solve the requirements</li>
+          <li>Help speak it to her</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Biggest Challenges faced in the tech industry:</p>
+<ul>
+  <li>She spent 14 years in qualcomm (semiconductor industry)
+    <ul>
+      <li>Acquisitions?? Buy other companies</li>
+      <li>The big fish in the pond (acquiring companies)</li>
+      <li>Serial killers (but not quite)</li>
+    </ul>
+  </li>
+  <li>Interviews are ridiculous
+    <ul>
+      <li>Interviews are a series of timed, random tests
+        <ul>
+          <li>Could be a problem to solve in 30-45 minutes</li>
+          <li>Code has to compile with no errors</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>How is your work-life balance:</p>
+<ul>
+  <li>When you talk to a company, you’re in a position to negotiate
+    <ul>
+      <li>You’re the one with the skill</li>
+      <li>Some good companies, some bad</li>
+    </ul>
+  </li>
+  <li>You have to learn how to use services that are specific to certain companies</li>
+</ul>
+
+<p>How does coding help in the business industry?</p>
+<ul>
+  <li>Plenty of people were software developers academically, but moved into non-tech senior roles</li>
+  <li>Coding is a way of thinking
+    <ul>
+      <li>A way of looking at a problem and dissecting it</li>
+      <li>Critical thinking, problem solving</li>
+      <li>Think methodically</li>
+    </ul>
+  </li>
+  <li>She interviews people on their ability to be a problem solver, and their ability to walk her through what you did what you did</li>
+</ul>
+
+<p>One of her questions:</p>
+<ul>
+  <li>You are in a room, not electronics, just whiteboard, pen, pencil</li>
+  <li>How many cars were sold in the United States last year?
+    <ul>
+      <li>She wants to know your assumptions, how she derived her answer</li>
+    </ul>
+  </li>
+</ul>
+
+<p>What are you interested in exploring or learning right now?</p>
+<ul>
+  <li>He is interested in learning about block chain technology
+    <ul>
+      <li>AWS and google cloud stuff at large companies</li>
+    </ul>
+  </li>
+</ul>
+
+<p>How would coding help with investment and finance?</p>
+<ul>
+  <li>Understanding algorithms, patterns, and analytics</li>
+</ul>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="tangalice/alicetang"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/alicetang/2022/12/13/ECWriteup.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/alicetang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/alicetang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/alicetang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/exampleUser" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/alicetang/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/exampleUser" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/alicetang/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
