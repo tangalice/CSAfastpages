@@ -1,63 +1,77 @@
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Menu | Alice’s fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Menu" />
+<meta name="author" content="Alice Tang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Menu and GUI" />
+<meta property="og:description" content="Menu and GUI" />
+<link rel="canonical" href="https://tangalice.github.io/alicetang/java/jupyter/2022/09/05/Menu.html" />
+<meta property="og:url" content="https://tangalice.github.io/alicetang/java/jupyter/2022/09/05/Menu.html" />
+<meta property="og:site_name" content="Alice’s fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-05T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Menu" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alice Tang"},"dateModified":"2022-09-05T00:00:00-05:00","datePublished":"2022-09-05T00:00:00-05:00","description":"Menu and GUI","headline":"Menu","mainEntityOfPage":{"@type":"WebPage","@id":"https://tangalice.github.io/alicetang/java/jupyter/2022/09/05/Menu.html"},"url":"https://tangalice.github.io/alicetang/java/jupyter/2022/09/05/Menu.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/alicetang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tangalice.github.io/alicetang/feed.xml" title="Alice's fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/alicetang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Menu</h1><p class="page-description">Menu and GUI</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-05T00:00:00-05:00" itemprop="datePublished">
-        Sep 5, 2022
-      </time>• 
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">Alice Tang</span></span>
-       • <span class="read-time" title="Estimated read time">
-    
-    
-      8 min read
-    
-</span></p>
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
 
-    
-      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
-      
-        <a class="category-tags-link" href="/alicetang/categories/#java">java</a>
-        &nbsp;
-      
-        <a class="category-tags-link" href="/alicetang/categories/#jupyter">jupyter</a>
-        
-      
-      </p>
-    
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
 
-    
-      
-        <div class="pb-5 d-flex flex-justify-center">
-          <div class="px-2">
+  <div class="wrapper"><a class="site-title" rel="author" href="/alicetang/">Alice&#39;s fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
 
-    <a href="https://github.com/tangalice/alicetang/tree/master/_notebooks/2022-09-05-Menu.ipynb" role="button" target="_blank">
-<img class="notebook-badge-image" src="/alicetang/assets/badges/github.svg" alt="View On GitHub">
-    </a>
-</div>
-
-          <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/tangalice/alicetang/master?filepath=_notebooks%2F2022-09-05-Menu.ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/alicetang/assets/badges/binder.svg" alt="Open In Binder"/>
-    </a>
-</div>
-
-          <div class="px-2">
-    <a href="https://colab.research.google.com/github/tangalice/alicetang/blob/master/_notebooks/2022-09-05-Menu.ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/alicetang/assets/badges/colab.svg" alt="Open In Colab"/>
-    </a>
-</div>
-          <div class="px-2">
-  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Ftangalice%2Falicetang%2Fblob%2Fmaster%2F_notebooks%2F2022-09-05-Menu.ipynb" target="_blank">
-      <img class="notebook-badge-image" src="/alicetang/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
-  </a>
-</div>
-
-        </div>
-      </header>
-
-  <div class="post-content e-content" itemprop="articleBody">
-    <ul id="toc" class="section-nav">
-</ul><!--
+        <div class="trigger"><a class="page-link" href="/alicetang/MMMRcalc/">Calculator</a><a class="page-link" href="/alicetang/about/">About Me</a><a class="page-link" href="/alicetang/hacks/">Hacks</a><a class="page-link" href="/alicetang/notebooks/">Jupyter Notebooks</a><a class="page-link" href="/alicetang/notes/">Notes</a><a class="page-link" href="/alicetang/search/">Search</a><a class="page-link" href="/alicetang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -80,20 +94,20 @@
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Menu</span> <span class="p">{</span>
     <span class="c1">// Instance Variables</span>
-    <span class="kd">public</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DEFAULT</span> <span class="o">=</span> <span class="s">"\u001B[0m"</span><span class="p">;</span>  <span class="c1">// Default Terminal Color</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DEFAULT</span> <span class="o">=</span> <span class="s">&quot;\u001B[0m&quot;</span><span class="p">;</span>  <span class="c1">// Default Terminal Color</span>
     <span class="kd">public</span> <span class="kd">final</span> <span class="n">String</span><span class="o">[][]</span> <span class="n">COLORS</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">// 2D Array of ANSI Terminal Colors</span>
-        <span class="p">{</span><span class="s">"Default"</span><span class="p">,</span><span class="n">DEFAULT</span><span class="p">},</span>
-        <span class="p">{</span><span class="s">"Red"</span><span class="p">,</span> <span class="s">"\u001B[31m"</span><span class="p">},</span> 
-        <span class="p">{</span><span class="s">"Green"</span><span class="p">,</span> <span class="s">"\u001B[32m"</span><span class="p">},</span> 
-        <span class="p">{</span><span class="s">"Yellow"</span><span class="p">,</span> <span class="s">"\u001B[33m"</span><span class="p">},</span> 
-        <span class="p">{</span><span class="s">"Blue"</span><span class="p">,</span> <span class="s">"\u001B[34m"</span><span class="p">},</span> 
-        <span class="p">{</span><span class="s">"Purple"</span><span class="p">,</span> <span class="s">"\u001B[35m"</span><span class="p">},</span> 
-        <span class="p">{</span><span class="s">"Cyan"</span><span class="p">,</span> <span class="s">"\u001B[36m"</span><span class="p">},</span> 
-        <span class="p">{</span><span class="s">"White"</span><span class="p">,</span> <span class="s">"\u001B[37m"</span><span class="p">},</span> 
+        <span class="p">{</span><span class="s">&quot;Default&quot;</span><span class="p">,</span><span class="n">DEFAULT</span><span class="p">},</span>
+        <span class="p">{</span><span class="s">&quot;Red&quot;</span><span class="p">,</span> <span class="s">&quot;\u001B[31m&quot;</span><span class="p">},</span> 
+        <span class="p">{</span><span class="s">&quot;Green&quot;</span><span class="p">,</span> <span class="s">&quot;\u001B[32m&quot;</span><span class="p">},</span> 
+        <span class="p">{</span><span class="s">&quot;Yellow&quot;</span><span class="p">,</span> <span class="s">&quot;\u001B[33m&quot;</span><span class="p">},</span> 
+        <span class="p">{</span><span class="s">&quot;Blue&quot;</span><span class="p">,</span> <span class="s">&quot;\u001B[34m&quot;</span><span class="p">},</span> 
+        <span class="p">{</span><span class="s">&quot;Purple&quot;</span><span class="p">,</span> <span class="s">&quot;\u001B[35m&quot;</span><span class="p">},</span> 
+        <span class="p">{</span><span class="s">&quot;Cyan&quot;</span><span class="p">,</span> <span class="s">&quot;\u001B[36m&quot;</span><span class="p">},</span> 
+        <span class="p">{</span><span class="s">&quot;White&quot;</span><span class="p">,</span> <span class="s">&quot;\u001B[37m&quot;</span><span class="p">},</span> 
     <span class="p">};</span>
     <span class="c1">// 2D column location for data</span>
     <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">NAME</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">ANSI</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// ANSI is the "standard" for terminal codes</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">ANSI</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// ANSI is the &quot;standard&quot; for terminal codes</span>
 
     <span class="c1">// Constructor on this Object takes control of menu events and actions</span>
     <span class="kd">public</span> <span class="nf">Menu</span><span class="p">()</span> <span class="p">{</span>
@@ -104,11 +118,11 @@
         <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">quit</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">try</span> <span class="p">{</span>  <span class="c1">// scan for Input</span>
                 <span class="kt">int</span> <span class="n">choice</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>  <span class="c1">// using method from Java Scanner Object</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">""</span> <span class="o">+</span> <span class="n">choice</span> <span class="o">+</span> <span class="s">": "</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">choice</span> <span class="o">+</span> <span class="s">&quot;: &quot;</span><span class="p">);</span>
                 <span class="n">quit</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">action</span><span class="p">(</span><span class="n">choice</span><span class="p">);</span>  <span class="c1">// take action</span>
             <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span> <span class="c1">// error: clear buffer</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span> <span class="o">+</span> <span class="s">": Not a number, try again."</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span> <span class="o">+</span> <span class="s">&quot;: Not a number, try again.&quot;</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">}</span>
         <span class="n">sc</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
@@ -120,9 +134,9 @@
     <span class="kt">int</span> <span class="n">numofNum</span><span class="p">,</span> <span class="n">userNum</span><span class="p">,</span> <span class="n">fact</span><span class="p">,</span> <span class="n">tempType</span><span class="p">;</span>
     <span class="kt">double</span>  <span class="n">celcius</span><span class="p">,</span> <span class="n">farenheit</span><span class="p">,</span> <span class="n">kelvin</span><span class="p">,</span> <span class="n">medianNum</span><span class="p">,</span> <span class="n">sdNumber</span><span class="p">;</span>
     <span class="kt">char</span> <span class="n">endReply</span><span class="p">;</span> 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">REPORT</span> <span class="o">=</span> <span class="s">"\nFactorial of "</span><span class="p">;</span> 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">FCONVERT</span> <span class="o">=</span> <span class="s">"\nConverted to Farenheit: "</span><span class="p">;</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KCONVERT</span> <span class="o">=</span> <span class="s">"\nConverted to Kelvin: "</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">REPORT</span> <span class="o">=</span> <span class="s">&quot;\nFactorial of &quot;</span><span class="p">;</span> 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">FCONVERT</span> <span class="o">=</span> <span class="s">&quot;\nConverted to Farenheit: &quot;</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KCONVERT</span> <span class="o">=</span> <span class="s">&quot;\nConverted to Kelvin: &quot;</span><span class="p">;</span>
     
 
     <span class="c1">//median</span>
@@ -169,16 +183,16 @@
     <span class="c1">// Print the menu options to Terminal</span>
     <span class="kd">private</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">//System.out.println commands below is used to present a Menu to the user. </span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"-------------------------\n"</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Choose from these choices"</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"-------------------------\n"</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"1 - Factorial"</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"2 - Temperature Converter"</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"3 - Median"</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"4 - Number Sort"</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"5 - Standard Deviation"</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"0 - Quit"</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"-------------------------\n"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;-------------------------\n&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Choose from these choices&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;-------------------------\n&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;1 - Factorial&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;2 - Temperature Converter&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;3 - Median&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;4 - Number Sort&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;5 - Standard Deviation&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;0 - Quit&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;-------------------------\n&quot;</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="c1">// Private method to perform action and return true if action is to quit/exit</span>
@@ -187,17 +201,17 @@
 
         <span class="k">switch</span> <span class="p">(</span><span class="n">selection</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// Switch or Switch/Case is Control Flow statement and is used to evaluate the user selection</span>
             <span class="k">case</span> <span class="mi">0</span><span class="p">:</span>  
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Goodbye, World!"</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Goodbye, World!&quot;</span><span class="p">);</span>
                 <span class="n">quit</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
                 <span class="k">break</span><span class="p">;</span>
                   
             <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Factorial "</span><span class="p">);</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nInput an integer: "</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Factorial &quot;</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;\nInput an integer: &quot;</span><span class="p">);</span>
                 <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
                 <span class="n">userNum</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
                 <span class="n">fact</span> <span class="o">=</span> <span class="n">findFact</span><span class="p">(</span><span class="n">userNum</span><span class="p">);</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">REPORT</span> <span class="o">+</span> <span class="n">userNum</span> <span class="o">+</span><span class="s">" is "</span><span class="o">+</span><span class="n">fact</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">REPORT</span> <span class="o">+</span> <span class="n">userNum</span> <span class="o">+</span><span class="s">&quot; is &quot;</span><span class="o">+</span><span class="n">fact</span><span class="p">);</span>
                 <span class="k">break</span><span class="p">;</span>
             
             <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
@@ -206,10 +220,10 @@
                 <span class="n">farenheit</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">;</span>
                 <span class="n">kelvin</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">;</span>
 
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"This program converts degress in Celcius to Farenheit or Kelvin \n"</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;This program converts degress in Celcius to Farenheit or Kelvin \n&quot;</span><span class="p">);</span>
                 
                 <span class="c1">// get degress in celcius from user</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nTemperature in Celcius: "</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;\nTemperature in Celcius: &quot;</span><span class="p">);</span>
                 <span class="n">userInputStr</span>  <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
                 <span class="n">celcius</span> <span class="o">=</span> <span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">celcius</span><span class="p">);</span>
@@ -217,7 +231,7 @@
                 <span class="c1">// input from user, what do they want to convert to</span>
                 <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
                 <span class="p">{</span>
-                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nConvert to (1)Farenheit or (2)Kelvin: "</span><span class="p">);</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;\nConvert to (1)Farenheit or (2)Kelvin: &quot;</span><span class="p">);</span>
                     <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
                     <span class="n">tempType</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
                     <span class="k">if</span> <span class="p">((</span><span class="n">tempType</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">tempType</span> <span class="o">==</span> <span class="mi">2</span><span class="p">))</span>
@@ -227,7 +241,7 @@
                     <span class="k">else</span>
                     <span class="p">{</span>
                         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">tempType</span><span class="p">);</span>
-                        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nPlease input either 1 or 2"</span><span class="p">);</span>
+                        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nPlease input either 1 or 2&quot;</span><span class="p">);</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">tempType</span><span class="p">);</span>
@@ -248,66 +262,66 @@
                 <span class="k">break</span><span class="p">;</span> 
             
             <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Median "</span><span class="p">);</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nhow many values would you like to input?"</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Median &quot;</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;\nhow many values would you like to input?&quot;</span><span class="p">);</span>
                 <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
                 <span class="n">numofNum</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
         
                 <span class="kt">double</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span> <span class="o">[</span><span class="n">numofNum</span><span class="o">]</span><span class="p">;</span> <span class="c1">//creates array with doubles, numofNum number of values in the array</span>
                 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">numofNum</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>       <span class="c1">//gets info from user for each spot in array</span>
                 <span class="p">{</span>
-                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nenter value: "</span><span class="p">);</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;\nenter value: &quot;</span><span class="p">);</span>
                     <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
                     <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
                     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
                 <span class="p">}</span>
                 <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nMedian: "</span> <span class="o">+</span> <span class="n">findMed</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">));</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nMedian: &quot;</span> <span class="o">+</span> <span class="n">findMed</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">));</span>
                 <span class="k">break</span><span class="p">;</span>
 
             <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Number Sort "</span><span class="p">);</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nhow many values would you like to input?"</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Number Sort &quot;</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;\nhow many values would you like to input?&quot;</span><span class="p">);</span>
                 <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
                 <span class="n">numofNum</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
         
                 <span class="kt">double</span><span class="o">[]</span> <span class="n">arr2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span> <span class="o">[</span><span class="n">numofNum</span><span class="o">]</span><span class="p">;</span>  <span class="c1">//creates array with doubles, numofNum number of values in the array</span>
                 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">numofNum</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>       <span class="c1">//gets info from user for each spot in array</span>
                 <span class="p">{</span>
-                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nenter value: "</span><span class="p">);</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;\nenter value: &quot;</span><span class="p">);</span>
                     <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
                     <span class="n">arr2</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
                     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr2</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
                 <span class="p">}</span>
         
                 <span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">arr2</span><span class="p">);</span>   <span class="c1">//sort array</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nSorted Numbers: "</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nSorted Numbers: &quot;</span><span class="p">);</span>
                 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">numofNum</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>       <span class="c1">//prints each spot in array</span>
                 <span class="p">{</span>
-                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr2</span><span class="o">[</span><span class="n">i</span><span class="o">]+</span> <span class="s">", "</span><span class="p">);</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr2</span><span class="o">[</span><span class="n">i</span><span class="o">]+</span> <span class="s">&quot;, &quot;</span><span class="p">);</span>
                 <span class="p">}</span>
                 <span class="k">break</span><span class="p">;</span>
             
             <span class="k">case</span> <span class="mi">5</span><span class="p">:</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Standard Deviation"</span><span class="p">);</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nhow many values would you like to find the standard deviation of?"</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Standard Deviation&quot;</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;\nhow many values would you like to find the standard deviation of?&quot;</span><span class="p">);</span>
                 <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
                 <span class="n">numofNum</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
                 <span class="kt">double</span><span class="o">[]</span> <span class="n">numsSD</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span> <span class="o">[</span><span class="n">numofNum</span><span class="o">]</span><span class="p">;</span> <span class="c1">//creates array with doubles, nomofNum number of values in the array</span>
                 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">numofNum</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
                 <span class="p">{</span>
-                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nenter value:"</span><span class="p">);</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;\nenter value:&quot;</span><span class="p">);</span>
                     <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
                     <span class="n">numsSD</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
                     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">numsSD</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
                 <span class="p">}</span>
                 <span class="n">sdNumber</span> <span class="o">=</span> <span class="n">sdcalc</span><span class="p">(</span><span class="n">numsSD</span><span class="p">);</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nthe standard deviation is "</span>  <span class="o">+</span><span class="n">sdNumber</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;\nthe standard deviation is &quot;</span>  <span class="o">+</span><span class="n">sdNumber</span><span class="p">);</span>
                 <span class="k">break</span><span class="p">;</span>
 
 <span class="nl">            default:</span>
                 <span class="c1">//Prints error message from console</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Unexpected choice, try again."</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Unexpected choice, try again.&quot;</span><span class="p">);</span>
         <span class="p">}</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">DEFAULT</span><span class="p">);</span>  <span class="c1">// make sure to reset color and provide new line</span>
         <span class="k">return</span> <span class="n">quit</span><span class="p">;</span>
@@ -405,21 +419,21 @@ the standard deviation is 37.844946822528364
     <span class="kd">private</span> <span class="n">JFrame</span> <span class="n">frame</span><span class="p">;</span>
     <span class="kd">private</span> <span class="n">JMenuBar</span> <span class="n">menubar</span><span class="p">;</span>
     <span class="kd">private</span> <span class="n">JMenu</span> <span class="n">menu</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">JLabel</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JLabel</span><span class="p">(</span><span class="s">"Click on Menu to select an action."</span><span class="p">);</span>
+    <span class="kd">private</span> <span class="n">JLabel</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JLabel</span><span class="p">(</span><span class="s">&quot;Click on Menu to select an action.&quot;</span><span class="p">);</span>
     <span class="kd">public</span> <span class="kd">final</span> <span class="n">String</span><span class="o">[]</span> <span class="n">MENUS</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">// 1D Array of Menu Choices</span>
-        <span class="s">"Hello"</span><span class="p">,</span> <span class="s">"Colors"</span><span class="p">,</span> <span class="s">"Loading bar"</span><span class="p">,</span>  
+        <span class="s">&quot;Hello&quot;</span><span class="p">,</span> <span class="s">&quot;Colors&quot;</span><span class="p">,</span> <span class="s">&quot;Loading bar&quot;</span><span class="p">,</span>  
     <span class="p">};</span>
     <span class="c1">// Statics to assist with timer and messaging, single copy (no instance)</span>
     <span class="kd">private</span>	<span class="kd">static</span> <span class="kt">int</span> <span class="n">delay</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
     <span class="kd">private</span>	<span class="kd">static</span> <span class="kt">int</span> <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">hashes</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">hashes</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
 
-    <span class="c1">// Constructor enables the Frame instance, the object "this.frame"</span>
+    <span class="c1">// Constructor enables the Frame instance, the object &quot;this.frame&quot;</span>
     <span class="kd">public</span> <span class="nf">MenuJFrame</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">)</span> <span class="p">{</span>
 	    <span class="c1">// Initializing Key Objects</span>
         <span class="n">frame</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JFrame</span><span class="p">(</span><span class="n">title</span><span class="p">);</span>
 	    <span class="n">menubar</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JMenuBar</span><span class="p">();</span>
-	    <span class="n">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JMenu</span><span class="p">(</span><span class="s">"Menu"</span><span class="p">);</span>
+	    <span class="n">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JMenu</span><span class="p">(</span><span class="s">&quot;Menu&quot;</span><span class="p">);</span>
 
         <span class="c1">// Initializing Menu objects and adding actions</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">mx</span> <span class="p">:</span> <span class="n">MENUS</span><span class="p">)</span> <span class="p">{</span>
@@ -448,37 +462,37 @@ the standard deviation is 37.844946822528364
         <span class="c1">// local variable to ActinEvent</span>
         <span class="n">String</span> <span class="n">selection</span> <span class="o">=</span> <span class="n">e</span><span class="p">.</span><span class="na">getActionCommand</span><span class="p">();</span>  <span class="c1">// menu selection</span>
         <span class="n">String</span> <span class="n">msg</span><span class="p">;</span> <span class="c1">// local variable to create response from action</span>
-        <span class="kd">final</span> <span class="n">String</span><span class="o">[]</span> <span class="n">COLORS</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Red"</span><span class="p">,</span> <span class="s">"Green"</span><span class="p">,</span> <span class="s">"Blue"</span><span class="p">};</span>  <span class="c1">// add more colors here</span>
- 	    <span class="kd">final</span> <span class="n">String</span> <span class="n">start_msg</span> <span class="o">=</span> <span class="s">"&lt;html&gt;"</span><span class="p">;</span>  <span class="c1">// html building</span>
-       	<span class="kd">final</span> <span class="n">String</span> <span class="n">end_msg</span> <span class="o">=</span> <span class="s">"&lt;/html&gt;"</span><span class="p">;</span>
-       	<span class="kd">final</span> <span class="n">String</span> <span class="n">hash</span> <span class="o">=</span> <span class="s">"#"</span><span class="p">;</span>
+        <span class="kd">final</span> <span class="n">String</span><span class="o">[]</span> <span class="n">COLORS</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Red&quot;</span><span class="p">,</span> <span class="s">&quot;Green&quot;</span><span class="p">,</span> <span class="s">&quot;Blue&quot;</span><span class="p">};</span>  <span class="c1">// add more colors here</span>
+ 	    <span class="kd">final</span> <span class="n">String</span> <span class="n">start_msg</span> <span class="o">=</span> <span class="s">&quot;&lt;html&gt;&quot;</span><span class="p">;</span>  <span class="c1">// html building</span>
+       	<span class="kd">final</span> <span class="n">String</span> <span class="n">end_msg</span> <span class="o">=</span> <span class="s">&quot;&lt;/html&gt;&quot;</span><span class="p">;</span>
+       	<span class="kd">final</span> <span class="n">String</span> <span class="n">hash</span> <span class="o">=</span> <span class="s">&quot;#&quot;</span><span class="p">;</span>
 
         <span class="c1">// run code based on the menuItem that was selected</span>
         <span class="k">if</span> <span class="p">(</span> <span class="n">selection</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">MENUS</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>  <span class="c1">// Hello Action</span>
-            <span class="n">msg</span> <span class="o">=</span> <span class="s">"Hello, World"</span><span class="p">;</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s">&quot;Hello, World&quot;</span><span class="p">;</span>
             <span class="n">message</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
         <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">selection</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">MENUS</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span> <span class="c1">// Color Action</span>
-            <span class="n">msg</span> <span class="o">=</span> <span class="n">start_msg</span> <span class="o">+</span> <span class="s">"&lt;p&gt;"</span> <span class="o">+</span> <span class="n">selection</span> <span class="o">+</span> <span class="s">"&lt;/p&gt;"</span><span class="p">;</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">start_msg</span> <span class="o">+</span> <span class="s">&quot;&lt;p&gt;&quot;</span> <span class="o">+</span> <span class="n">selection</span> <span class="o">+</span> <span class="s">&quot;&lt;/p&gt;&quot;</span><span class="p">;</span>
             <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">color</span> <span class="p">:</span> <span class="n">COLORS</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">msg</span> <span class="o">+=</span> <span class="s">"&lt;font color="</span> <span class="o">+</span> <span class="n">color</span> <span class="o">+</span> <span class="s">"&gt;"</span> <span class="o">+</span> <span class="n">color</span> <span class="o">+</span> <span class="s">" &lt;/font&gt;"</span><span class="p">;</span>
+                <span class="n">msg</span> <span class="o">+=</span> <span class="s">&quot;&lt;font color=&quot;</span> <span class="o">+</span> <span class="n">color</span> <span class="o">+</span> <span class="s">&quot;&gt;&quot;</span> <span class="o">+</span> <span class="n">color</span> <span class="o">+</span> <span class="s">&quot; &lt;/font&gt;&quot;</span><span class="p">;</span>
             <span class="p">}</span>
             <span class="n">msg</span> <span class="o">+=</span> <span class="n">end_msg</span><span class="p">;</span>
             <span class="n">message</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>  <span class="c1">// Loading Bar Action</span>
-	    <span class="n">String</span> <span class="n">loading</span> <span class="o">=</span> <span class="s">"&lt;p&gt;Loading&lt;/p&gt;"</span><span class="p">;</span>
+	    <span class="n">String</span> <span class="n">loading</span> <span class="o">=</span> <span class="s">&quot;&lt;p&gt;Loading&lt;/p&gt;&quot;</span><span class="p">;</span>
             <span class="c1">// Code to run on a Timer</span>
             <span class="n">Timer</span> <span class="n">timer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Timer</span><span class="p">();</span>
             <span class="n">TimerTask</span> <span class="n">task</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TimerTask</span><span class="p">()</span> <span class="p">{</span>
                 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>  <span class="c1">// Method for TimerTask</span>
                     <span class="c1">// Static and Local variables used to manage message building</span>
                     <span class="kt">int</span> <span class="n">random</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="n">COLORS</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>  <span class="c1">// random logic</span>
-                    <span class="n">MenuJFrame</span><span class="p">.</span><span class="na">hashes</span> <span class="o">+=</span>  <span class="s">"&lt;font color="</span> <span class="o">+</span> <span class="n">COLORS</span><span class="o">[</span><span class="n">random</span><span class="o">]</span> <span class="o">+</span> <span class="s">"&gt;"</span> <span class="o">+</span> <span class="n">hash</span> <span class="o">+</span> <span class="s">"&lt;/font&gt;"</span><span class="p">;</span>
+                    <span class="n">MenuJFrame</span><span class="p">.</span><span class="na">hashes</span> <span class="o">+=</span>  <span class="s">&quot;&lt;font color=&quot;</span> <span class="o">+</span> <span class="n">COLORS</span><span class="o">[</span><span class="n">random</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;&gt;&quot;</span> <span class="o">+</span> <span class="n">hash</span> <span class="o">+</span> <span class="s">&quot;&lt;/font&gt;&quot;</span><span class="p">;</span>
                     <span class="n">String</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">start_msg</span> <span class="o">+</span> <span class="n">loading</span> <span class="o">+</span> <span class="n">hashes</span> <span class="o">+</span> <span class="n">end_msg</span><span class="p">;</span>
                     <span class="n">message</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
                     
 	  	            <span class="c1">// Shutdown timer and reset data</span>
                     <span class="k">if</span><span class="p">(</span><span class="n">MenuJFrame</span><span class="p">.</span><span class="na">step</span><span class="o">++</span> <span class="o">&gt;</span> <span class="n">MenuJFrame</span><span class="p">.</span><span class="na">delay</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">MenuJFrame</span><span class="p">.</span><span class="na">step</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">MenuJFrame</span><span class="p">.</span><span class="na">hashes</span><span class="o">=</span><span class="s">""</span><span class="p">;</span>
+                        <span class="n">MenuJFrame</span><span class="p">.</span><span class="na">step</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">MenuJFrame</span><span class="p">.</span><span class="na">hashes</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span>
                         <span class="n">timer</span><span class="p">.</span><span class="na">cancel</span><span class="p">();</span>
                     <span class="p">}</span>
                 <span class="p">};</span>
@@ -492,7 +506,7 @@ the standard deviation is 37.844946822528364
     <span class="c1">// Driver turn over control the GUI</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Activates an instance of MenuJFrame class, which makes a JFrame object</span>
-        <span class="k">new</span> <span class="n">MenuJFrame</span><span class="p">(</span><span class="s">"Menu"</span><span class="p">);</span>
+        <span class="k">new</span> <span class="n">MenuJFrame</span><span class="p">(</span><span class="s">&quot;Menu&quot;</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="n">MenuJFrame</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
@@ -509,7 +523,7 @@ the standard deviation is 37.844946822528364
 
 <div class="output_subarea output_text output_error">
 <pre>
-The Kernel crashed while executing code in the the current cell or a previous cell. Please review the code in the cell(s) to identify a possible cause of the failure. Click &lt;a href='https://aka.ms/vscodeJupyterKernelCrash'&gt;here&lt;/a&gt; for more info. View Jupyter &lt;a href='command:jupyter.viewOutput'&gt;log&lt;/a&gt; for further details.</pre>
+The Kernel crashed while executing code in the the current cell or a previous cell. Please review the code in the cell(s) to identify a possible cause of the failure. Click &lt;a href=&#39;https://aka.ms/vscodeJupyterKernelCrash&#39;&gt;here&lt;/a&gt; for more info. View Jupyter &lt;a href=&#39;command:jupyter.viewOutput&#39;&gt;log&lt;/a&gt; for further details.</pre>
 </div>
 </div>
 
@@ -523,13 +537,47 @@ The Kernel crashed while executing code in the the current cell or a previous ce
 
 
 
-  </div><!-- from https://github.com/utterance/utterances -->
-<script src="https://utteranc.es/client.js"
-        repo="tangalice/alicetang"
-        issue-term="title"
-        label="blogpost-comment"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script><a class="u-url" href="/alicetang/java/jupyter/2022/09/05/Menu.html" hidden></a>
-</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/alicetang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://tangalice.github.io/alicetang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/alicetang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/exampleUser" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/alicetang/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/exampleUser" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/alicetang/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,73 +1,77 @@
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Boolean and If Expressions | Alice’s fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Boolean and If Expressions" />
+<meta name="author" content="Alice Tang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Lessons and IFs and expressions" />
+<meta property="og:description" content="Lessons and IFs and expressions" />
+<link rel="canonical" href="https://tangalice.github.io/alicetang/java/jupyter/2022/09/10/Ifs.html" />
+<meta property="og:url" content="https://tangalice.github.io/alicetang/java/jupyter/2022/09/10/Ifs.html" />
+<meta property="og:site_name" content="Alice’s fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-10T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Boolean and If Expressions" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alice Tang"},"dateModified":"2022-09-10T00:00:00-05:00","datePublished":"2022-09-10T00:00:00-05:00","description":"Lessons and IFs and expressions","headline":"Boolean and If Expressions","mainEntityOfPage":{"@type":"WebPage","@id":"https://tangalice.github.io/alicetang/java/jupyter/2022/09/10/Ifs.html"},"url":"https://tangalice.github.io/alicetang/java/jupyter/2022/09/10/Ifs.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/alicetang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tangalice.github.io/alicetang/feed.xml" title="Alice's fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/alicetang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Boolean and If Expressions</h1><p class="page-description">Lessons and IFs and expressions</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-10T00:00:00-05:00" itemprop="datePublished">
-        Sep 10, 2022
-      </time>• 
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">Alice Tang</span></span>
-       • <span class="read-time" title="Estimated read time">
-    
-    
-      6 min read
-    
-</span></p>
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
 
-    
-      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
-      
-        <a class="category-tags-link" href="/alicetang/categories/#java">java</a>
-        &nbsp;
-      
-        <a class="category-tags-link" href="/alicetang/categories/#jupyter">jupyter</a>
-        
-      
-      </p>
-    
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
 
-    
-      
-        <div class="pb-5 d-flex flex-justify-center">
-          <div class="px-2">
+  <div class="wrapper"><a class="site-title" rel="author" href="/alicetang/">Alice&#39;s fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
 
-    <a href="https://github.com/tangalice/alicetang/tree/master/_notebooks/2022-09-10-Ifs.ipynb" role="button" target="_blank">
-<img class="notebook-badge-image" src="/alicetang/assets/badges/github.svg" alt="View On GitHub">
-    </a>
-</div>
-
-          <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/tangalice/alicetang/master?filepath=_notebooks%2F2022-09-10-Ifs.ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/alicetang/assets/badges/binder.svg" alt="Open In Binder"/>
-    </a>
-</div>
-
-          <div class="px-2">
-    <a href="https://colab.research.google.com/github/tangalice/alicetang/blob/master/_notebooks/2022-09-10-Ifs.ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/alicetang/assets/badges/colab.svg" alt="Open In Colab"/>
-    </a>
-</div>
-          <div class="px-2">
-  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Ftangalice%2Falicetang%2Fblob%2Fmaster%2F_notebooks%2F2022-09-10-Ifs.ipynb" target="_blank">
-      <img class="notebook-badge-image" src="/alicetang/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
-  </a>
-</div>
-
-        </div>
-      </header>
-
-  <div class="post-content e-content" itemprop="articleBody">
-    <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h3"><a href="#IF-Statement">IF Statement </a></li>
-<li class="toc-entry toc-h3"><a href="#If/Else-Statement">If/Else Statement </a></li>
-<li class="toc-entry toc-h3"><a href="#If/ElseIf-Statement">If/ElseIf Statement </a></li>
-<li class="toc-entry toc-h3"><a href="#If/ElseIf/Else-Statement">If/ElseIf/Else Statement </a></li>
-<li class="toc-entry toc-h3"><a href="#Switch-Statement">Switch Statement </a></li>
-<li class="toc-entry toc-h3"><a href="#Boolean-Expressions">Boolean Expressions </a></li>
-<li class="toc-entry toc-h3"><a href="#Logic-Gates">Logic Gates </a></li>
-<li class="toc-entry toc-h3"><a href="#De-Morgan's-Law">De Morgan&#39;s Law </a></li>
-<li class="toc-entry toc-h2"><a href="#Truth-Tables">Truth Tables </a></li>
-<li class="toc-entry toc-h2"><a href="#Resources">Resources </a></li>
-</ul><!--
+        <div class="trigger"><a class="page-link" href="/alicetang/MMMRcalc/">Calculator</a><a class="page-link" href="/alicetang/about/">About Me</a><a class="page-link" href="/alicetang/hacks/">Hacks</a><a class="page-link" href="/alicetang/notebooks/">Jupyter Notebooks</a><a class="page-link" href="/alicetang/notes/">Notes</a><a class="page-link" href="/alicetang/search/">Search</a><a class="page-link" href="/alicetang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -76,13 +80,9 @@
 
 <div class="container" id="notebook-container">
         
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="IF-Statement">
-<a class="anchor" href="#IF-Statement" aria-hidden="true"><span class="octicon octicon-link"></span></a>IF Statement<a class="anchor-link" href="#IF-Statement"> </a>
-</h3>
-<p>An If statement is a conditional statement that, when true, runs the code inside the statement.</p>
+<h3 id="IF-Statement">IF Statement<a class="anchor-link" href="#IF-Statement"> </a></h3><p>An If statement is a conditional statement that, when true, runs the code inside the statement.</p>
 
 </div>
 </div>
@@ -94,14 +94,14 @@
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="c1">//condition inside if statment is true so system outprints "Hi"</span>
+<div class=" highlight hl-java"><pre><span></span><span class="c1">//condition inside if statment is true so system outprints &quot;Hi&quot;</span>
 <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Hi"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hi&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="c1">//true and not false so system prints out "Hello"</span>
+<span class="c1">//true and not false so system prints out &quot;Hello&quot;</span>
 <span class="k">if</span> <span class="p">(</span><span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -127,13 +127,9 @@ Hello
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="If/Else-Statement">
-<a class="anchor" href="#If/Else-Statement" aria-hidden="true"><span class="octicon octicon-link"></span></a>If/Else Statement<a class="anchor-link" href="#If/Else-Statement"> </a>
-</h3>
-<p>The If/Else statement extends the If statement by specifying an action if the If (true/false expression) is false. With the If statement, a program will execute the true code block or do nothing. With the If/Else statement, the program will execute either the true code block or the false code block so something is always executed with an If/Else statement.</p>
+<h3 id="If/Else-Statement">If/Else Statement<a class="anchor-link" href="#If/Else-Statement"> </a></h3><p>The If/Else statement extends the If statement by specifying an action if the If (true/false expression) is false. With the If statement, a program will execute the true code block or do nothing. With the If/Else statement, the program will execute either the true code block or the false code block so something is always executed with an If/Else statement.</p>
 
 </div>
 </div>
@@ -149,10 +145,10 @@ Hello
 
 <span class="c1">//if statement is false so the else statment runs</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Greater than 5"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Greater than 5&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -177,13 +173,9 @@ Hello
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="If/ElseIf-Statement">
-<a class="anchor" href="#If/ElseIf-Statement" aria-hidden="true"><span class="octicon octicon-link"></span></a>If/ElseIf Statement<a class="anchor-link" href="#If/ElseIf-Statement"> </a>
-</h3>
-<p>The If/ElseIf statement allows you to create a chain of If statements. You are able to test more than two conditions unlike the If/Else statment. The If statements are evaluated in order until one of the If expressions is true or the end of the If/ElseIf chain is reached. If the end of the If/ElseIf chain is reached without a true expression, no code blocks are executed.</p>
+<h3 id="If/ElseIf-Statement">If/ElseIf Statement<a class="anchor-link" href="#If/ElseIf-Statement"> </a></h3><p>The If/ElseIf statement allows you to create a chain of If statements. You are able to test more than two conditions unlike the If/Else statment. The If statements are evaluated in order until one of the If expressions is true or the end of the If/ElseIf chain is reached. If the end of the If/ElseIf chain is reached without a true expression, no code blocks are executed.</p>
 
 </div>
 </div>
@@ -199,19 +191,19 @@ Hello
 
 <span class="c1">//false conditions until last else if statement so that one runs</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Less than 2"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Less than 2&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Less than 4"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Less than 4&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Less than 6"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Less than 6&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">8</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Less than 8"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Less than 8&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Less than 10"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Less than 10&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -236,13 +228,9 @@ Hello
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="If/ElseIf/Else-Statement">
-<a class="anchor" href="#If/ElseIf/Else-Statement" aria-hidden="true"><span class="octicon octicon-link"></span></a>If/ElseIf/Else Statement<a class="anchor-link" href="#If/ElseIf/Else-Statement"> </a>
-</h3>
-<p>If/ElseIf/Else statements are the same as If/ElseIf statements except they have a trailing Else statement added at the end. This way there is executable code if none of the If or Else If statments are true.</p>
+<h3 id="If/ElseIf/Else-Statement">If/ElseIf/Else Statement<a class="anchor-link" href="#If/ElseIf/Else-Statement"> </a></h3><p>If/ElseIf/Else statements are the same as If/ElseIf statements except they have a trailing Else statement added at the end. This way there is executable code if none of the If or Else If statments are true.</p>
 
 </div>
 </div>
@@ -254,20 +242,20 @@ Hello
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kt">char</span> <span class="n">x</span> <span class="o">=</span> <span class="sc">'d'</span><span class="p">;</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kt">char</span> <span class="n">x</span> <span class="o">=</span> <span class="sc">&#39;d&#39;</span><span class="p">;</span>
 
 <span class="c1">//none of the if or elseif statments are true so it goes through the chain and runs the else statment</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="sc">'a'</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"x is a"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="sc">&#39;a&#39;</span><span class="p">){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;x is a&quot;</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="sc">'b'</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"x is b"</span><span class="p">);</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="sc">&#39;b&#39;</span><span class="p">){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;x is b&quot;</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="sc">'c'</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"x is c"</span><span class="p">);</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="sc">&#39;c&#39;</span><span class="p">){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;x is c&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"not a, b, or c"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;not a, b, or c&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -292,8 +280,7 @@ Hello
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If/ElseIf/Else statments can be used to decide different program outputs depending on what the user inputted. For example, they would be helpful in a menu program.</p>
 
@@ -311,29 +298,29 @@ Hello
 <span class="n">String</span> <span class="n">userInputStr</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">choice</span><span class="p">;</span>
 
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"choose an integer 1-5: "</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;choose an integer 1-5: &quot;</span><span class="p">);</span>
 <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
 <span class="n">choice</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>  <span class="c1">//get user input for choice</span>
 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">choice</span><span class="p">);</span>
 
 <span class="c1">//false conditions until choice equals 4 and only that else if statement runs</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">choice</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nyou chose one"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nyou chose one&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">choice</span><span class="o">==</span><span class="mi">2</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nyou chose two"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nyou chose two&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">choice</span><span class="o">==</span><span class="mi">3</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nyou chose three"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nyou chose three&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">choice</span><span class="o">==</span><span class="mi">4</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nyou chose four"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nyou chose four&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">choice</span><span class="o">==</span><span class="mi">5</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nyou chose five"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nyou chose five&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"invalid input"</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;invalid input&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -361,13 +348,9 @@ you chose four
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Switch-Statement">
-<a class="anchor" href="#Switch-Statement" aria-hidden="true"><span class="octicon octicon-link"></span></a>Switch Statement<a class="anchor-link" href="#Switch-Statement"> </a>
-</h3>
-<p>A switch statement is usually more efficient than a set of nested ifs. The switch statement is a control flow statement. It evaluates a user selection and different parts of code can be executed quickly. Below, a switch statement will preform the same function as the chain of nested ifs above.</p>
+<h3 id="Switch-Statement">Switch Statement<a class="anchor-link" href="#Switch-Statement"> </a></h3><p>A switch statement is usually more efficient than a set of nested ifs. The switch statement is a control flow statement. It evaluates a user selection and different parts of code can be executed quickly. Below, a switch statement will preform the same function as the chain of nested ifs above.</p>
 
 </div>
 </div>
@@ -383,29 +366,29 @@ you chose four
 <span class="n">String</span> <span class="n">userInputStr</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">choice</span><span class="p">;</span>
 
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"choose an integer 1-5: "</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;choose an integer 1-5: &quot;</span><span class="p">);</span>
 <span class="n">userInputStr</span> <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
 <span class="n">choice</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">userInputStr</span><span class="p">);</span>
 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">choice</span><span class="p">);</span>
 
 <span class="k">switch</span> <span class="p">(</span><span class="n">choice</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">//based on what the user inputted for the choice variable, different cases will run</span>
     <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nyou chose one"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nyou chose one&quot;</span><span class="p">);</span>
         <span class="k">break</span><span class="p">;</span>
     <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nyou chose two"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nyou chose two&quot;</span><span class="p">);</span>
         <span class="k">break</span><span class="p">;</span>
     <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nyou chose three"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nyou chose three&quot;</span><span class="p">);</span>
         <span class="k">break</span><span class="p">;</span> <span class="c1">//default prevents it from moving on to and running the following cases</span>
     <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nyou chose four"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nyou chose four&quot;</span><span class="p">);</span>
         <span class="k">break</span><span class="p">;</span>
     <span class="k">case</span> <span class="mi">5</span><span class="p">:</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nyou chose five"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nyou chose five&quot;</span><span class="p">);</span>
         <span class="k">break</span><span class="p">;</span>
     <span class="k">default</span><span class="p">:</span>  
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"invalid input"</span><span class="p">);</span>  
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;invalid input&quot;</span><span class="p">);</span>  
 <span class="p">}</span>
 </pre></div>
 
@@ -433,25 +416,17 @@ you chose four
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Boolean-Expressions">
-<a class="anchor" href="#Boolean-Expressions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Boolean Expressions<a class="anchor-link" href="#Boolean-Expressions"> </a>
-</h3>
-<p>A Boolean expression is a logical statement that is either True or False. Boolean expressions can compare any type of data if both parts of the expression have the same basic data type. A Boolean expression can be a combination of the Boolean constants true or false.</p>
+<h3 id="Boolean-Expressions">Boolean Expressions<a class="anchor-link" href="#Boolean-Expressions"> </a></h3><p>A Boolean expression is a logical statement that is either True or False. Boolean expressions can compare any type of data if both parts of the expression have the same basic data type. A Boolean expression can be a combination of the Boolean constants true or false.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Logic-Gates">
-<a class="anchor" href="#Logic-Gates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logic Gates<a class="anchor-link" href="#Logic-Gates"> </a>
-</h3>
-<p>Logic gates are used to carry out logical operations on single or multiple binary inputs and give one binary output. In simple terms, logic gates are the electronic circuits in a digital system.</p>
-<p><img src="https://www.electronicsforu.com/wp-contents/uploads/2022/08/logic-gates.jpeg" alt="This is an image"></p>
+<h3 id="Logic-Gates">Logic Gates<a class="anchor-link" href="#Logic-Gates"> </a></h3><p>Logic gates are used to carry out logical operations on single or multiple binary inputs and give one binary output. In simple terms, logic gates are the electronic circuits in a digital system.</p>
+<p><img src="https://www.electronicsforu.com/wp-contents/uploads/2022/08/logic-gates.jpeg" alt="This is an image" /></p>
 <ul>
 <li>Buffer/YES : output is the same as the input</li>
 <li>NOT : output is the opposite of the input</li>
@@ -462,7 +437,7 @@ you chose four
 <li>XOR : returns true if the two inputs are different</li>
 <li>XNOR : returns true if two inputs are the same </li>
 </ul>
-<p><img src="https://www.researchgate.net/profile/Seth-Abels/publication/291418819/figure/fig3/AS:718510820962304@1548317737478/Summary-of-the-common-Boolean-logic-gates-with-symbols-and-truth-tables.png" alt="This is an image"></p>
+<p><img src="https://www.researchgate.net/profile/Seth-Abels/publication/291418819/figure/fig3/AS:718510820962304@1548317737478/Summary-of-the-common-Boolean-logic-gates-with-symbols-and-truth-tables.png" alt="This is an image" /></p>
 <p>These tables demonstrate the input and output combinations of different logic gates</p>
 <ul>
 <li>Tips to help remember the symbols:<ul>
@@ -476,13 +451,9 @@ you chose four
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="De-Morgan's-Law">
-<a class="anchor" href="#De-Morgan's-Law" aria-hidden="true"><span class="octicon octicon-link"></span></a>De Morgan's Law<a class="anchor-link" href="#De-Morgan's-Law"> </a>
-</h3>
-<p>DeMorgan's laws tell us how to transform logical expressions (with multiple AND and/or OR statements) using the NOT operator.</p>
+<h3 id="De-Morgan's-Law">De Morgan's Law<a class="anchor-link" href="#De-Morgan's-Law"> </a></h3><p>DeMorgan's laws tell us how to transform logical expressions (with multiple AND and/or OR statements) using the NOT operator.</p>
 <ul>
 <li>(not(A and B)) is equal to (not A or not B)</li>
 <li>(not(A or B)) is equal to (not A and not B)</li>
@@ -492,16 +463,14 @@ you chose four
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://github.com/tangalice/alicetang/blob/master/images/DeMorgans.png?raw=true" alt="This is an image"></p>
+<p><img src="https://github.com/tangalice/alicetang/blob/master/images/DeMorgans.png?raw=true" alt="This is an image" /></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Syntax</p>
 <ul>
@@ -530,10 +499,10 @@ you chose four
 <span class="kt">boolean</span> <span class="n">result2</span> <span class="o">=</span> <span class="p">((</span><span class="o">!</span><span class="n">a</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="o">!</span><span class="n">b</span><span class="p">));</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">result1</span> <span class="o">==</span> <span class="n">result2</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"result 1 and 2 are the same"</span><span class="p">);</span>  
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;result 1 and 2 are the same&quot;</span><span class="p">);</span>  
 <span class="p">}</span>
 <span class="k">else</span><span class="p">{</span>   <span class="c1">//result 1 and 2 will always be equal, the code should never reach here</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error"</span><span class="p">);</span> 
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">);</span> 
 <span class="p">}</span>
 
 <span class="c1">//Not (A or B)</span>
@@ -543,10 +512,10 @@ you chose four
 <span class="kt">boolean</span> <span class="n">result4</span> <span class="o">=</span> <span class="p">((</span><span class="o">!</span><span class="n">a</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="n">b</span><span class="p">));</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">result3</span> <span class="o">==</span> <span class="n">result4</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"result 3 and 4 are the same"</span><span class="p">);</span>  
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;result 3 and 4 are the same&quot;</span><span class="p">);</span>  
 <span class="p">}</span>
 <span class="k">else</span><span class="p">{</span>   <span class="c1">//result 3 and 4 will always be equal, the code should never reach here</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error"</span><span class="p">);</span> 
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">);</span> 
 <span class="p">}</span>
 </pre></div>
 
@@ -572,25 +541,17 @@ result 3 and 4 are the same
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Truth-Tables">
-<a class="anchor" href="#Truth-Tables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Truth Tables<a class="anchor-link" href="#Truth-Tables"> </a>
-</h2>
-<p>A truth table is a breakdown of a logic function by listing all possible values the function can attain. Such a table typically contains several rows and columns, with the top row representing the logical variables and combinations, in increasing complexity leading up to the final function.
-<img src="https://github.com/tangalice/alicetang/blob/master/images/TruthTable.png?raw=true" alt="This is an image"></p>
+<h2 id="Truth-Tables">Truth Tables<a class="anchor-link" href="#Truth-Tables"> </a></h2><p>A truth table is a breakdown of a logic function by listing all possible values the function can attain. Such a table typically contains several rows and columns, with the top row representing the logical variables and combinations, in increasing complexity leading up to the final function.
+<img src="https://github.com/tangalice/alicetang/blob/master/images/TruthTable.png?raw=true" alt="This is an image" /></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Resources">
-<a class="anchor" href="#Resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resources<a class="anchor-link" href="#Resources"> </a>
-</h2>
-<ul>
+<h2 id="Resources">Resources<a class="anchor-link" href="#Resources"> </a></h2><ul>
 <li><a href="https://www.computerhope.com/jargon/i/ifstatme.htm">https://www.computerhope.com/jargon/i/ifstatme.htm</a></li>
 <li><a href="https://eecs.oregonstate.edu/ecampus-video/CS161/template/chapter_4/ifelse.html">https://eecs.oregonstate.edu/ecampus-video/CS161/template/chapter_4/ifelse.html</a></li>
 <li><a href="https://www.onlinemathlearning.com/demorgans-law.html">https://www.onlinemathlearning.com/demorgans-law.html</a></li>
@@ -605,13 +566,47 @@ result 3 and 4 are the same
 
 
 
-  </div><!-- from https://github.com/utterance/utterances -->
-<script src="https://utteranc.es/client.js"
-        repo="tangalice/alicetang"
-        issue-term="title"
-        label="blogpost-comment"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script><a class="u-url" href="/alicetang/java/jupyter/2022/09/10/Ifs.html" hidden></a>
-</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/alicetang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://tangalice.github.io/alicetang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/alicetang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/exampleUser" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/alicetang/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/exampleUser" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/alicetang/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
