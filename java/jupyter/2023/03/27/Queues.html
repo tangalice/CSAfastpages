@@ -370,10 +370,10 @@ window.onload = wrap_img;
 <span class="kd">class</span> <span class="nc">QueueTester</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// Create iterable Queue of Words</span>
-        <span class="n">String</span><span class="o">[]</span> <span class="n">words</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="p">{</span> <span class="s">&quot;seven&quot;</span><span class="p">,</span> <span class="s">&quot;slimy&quot;</span><span class="p">,</span> <span class="s">&quot;snakes&quot;</span><span class="p">,</span> <span class="s">&quot;sallying&quot;</span><span class="p">,</span> <span class="s">&quot;slowly&quot;</span><span class="p">,</span> <span class="s">&quot;slithered&quot;</span><span class="p">,</span> <span class="s">&quot;southward&quot;</span><span class="p">};</span>
+        <span class="c1">// Create iterable Queue of Levels</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">levels</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="p">{</span> <span class="s">&quot;underground&quot;</span><span class="p">,</span> <span class="s">&quot;forest floor&quot;</span><span class="p">,</span> <span class="s">&quot;understory&quot;</span><span class="p">,</span> <span class="s">&quot;canopy&quot;</span><span class="p">,</span> <span class="s">&quot;emergent&quot;</span><span class="p">,</span> <span class="s">&quot;sky&quot;</span><span class="p">,</span> <span class="s">&quot;space&quot;</span><span class="p">};</span>
         <span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-        <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">w</span> <span class="p">:</span> <span class="n">words</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">w</span> <span class="p">:</span> <span class="n">levels</span><span class="p">)</span> <span class="p">{</span>
           <span class="n">q</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
           <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enqueued Data: &quot;</span> <span class="o">+</span> <span class="n">w</span><span class="p">);</span>
           <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">q</span><span class="p">);</span>
@@ -399,33 +399,33 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Enqueued Data: seven
-Words count: 1, data: seven 
-Enqueued Data: slimy
-Words count: 2, data: seven slimy 
-Enqueued Data: snakes
-Words count: 3, data: seven slimy snakes 
-Enqueued Data: sallying
-Words count: 4, data: seven slimy snakes sallying 
-Enqueued Data: slowly
-Words count: 5, data: seven slimy snakes sallying slowly 
-Enqueued Data: slithered
-Words count: 6, data: seven slimy snakes sallying slowly slithered 
-Enqueued Data: southward
-Words count: 7, data: seven slimy snakes sallying slowly slithered southward 
-Dequeued Data: seven
-Words count: 6, data: slimy snakes sallying slowly slithered southward 
-Dequeued Data: slimy
-Words count: 5, data: snakes sallying slowly slithered southward 
-Dequeued Data: snakes
-Words count: 4, data: sallying slowly slithered southward 
-Dequeued Data: sallying
-Words count: 3, data: slowly slithered southward 
-Dequeued Data: slowly
-Words count: 2, data: slithered southward 
-Dequeued Data: slithered
-Words count: 1, data: southward 
-Dequeued Data: southward
+<pre>Enqueued Data: underground
+Words count: 1, data: underground 
+Enqueued Data: forest floor
+Words count: 2, data: underground forest floor 
+Enqueued Data: understory
+Words count: 3, data: underground forest floor understory 
+Enqueued Data: canopy
+Words count: 4, data: underground forest floor understory canopy 
+Enqueued Data: emergent
+Words count: 5, data: underground forest floor understory canopy emergent 
+Enqueued Data: sky
+Words count: 6, data: underground forest floor understory canopy emergent sky 
+Enqueued Data: space
+Words count: 7, data: underground forest floor understory canopy emergent sky space 
+Dequeued Data: underground
+Words count: 6, data: forest floor understory canopy emergent sky space 
+Dequeued Data: forest floor
+Words count: 5, data: understory canopy emergent sky space 
+Dequeued Data: understory
+Words count: 4, data: canopy emergent sky space 
+Dequeued Data: canopy
+Words count: 3, data: emergent sky space 
+Dequeued Data: emergent
+Words count: 2, data: sky space 
+Dequeued Data: sky
+Words count: 1, data: space 
+Dequeued Data: space
 Words count: 0, data: 
 </pre>
 </div>
