@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Weather AI | Alice’s fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Weather AI" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Final PBL Project, AI Weather Prediction" />
+<meta property="og:description" content="Final PBL Project, AI Weather Prediction" />
+<link rel="canonical" href="https://tangalice.github.io/alicetang/python/jupyter/2023/05/26/weather.html" />
+<meta property="og:url" content="https://tangalice.github.io/alicetang/python/jupyter/2023/05/26/weather.html" />
+<meta property="og:site_name" content="Alice’s fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-05-26T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Weather AI" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-26T00:00:00-05:00","datePublished":"2023-05-26T00:00:00-05:00","description":"Final PBL Project, AI Weather Prediction","headline":"Weather AI","mainEntityOfPage":{"@type":"WebPage","@id":"https://tangalice.github.io/alicetang/python/jupyter/2023/05/26/weather.html"},"url":"https://tangalice.github.io/alicetang/python/jupyter/2023/05/26/weather.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/alicetang/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tangalice.github.io/alicetang/feed.xml" title="Alice's fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/alicetang/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/alicetang/">Alice&#39;s fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/alicetang/MMMRcalc/">Calculator</a><a class="page-link" href="/alicetang/about/">About Me</a><a class="page-link" href="/alicetang/hacks/">Hacks</a><a class="page-link" href="/alicetang/notebooks/">Jupyter Notebooks</a><a class="page-link" href="/alicetang/notes/">Notes</a><a class="page-link" href="/alicetang/search/">Search</a><a class="page-link" href="/alicetang/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-05-26-weather.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>    <span class="c1">#pandas is a data analysis library for python</span>
+
+<span class="n">weather</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;weather.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;DATE&quot;</span><span class="p">)</span>   
+<span class="c1"># pandas read csv function, reads in weather csv file. specifies that the first colomn (date colomn) is the index </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>STATION</th>
+      <th>NAME</th>
+      <th>ACMH</th>
+      <th>ACSH</th>
+      <th>AWND</th>
+      <th>FMTM</th>
+      <th>PGTM</th>
+      <th>PRCP</th>
+      <th>SNOW</th>
+      <th>SNWD</th>
+      <th>...</th>
+      <th>WT11</th>
+      <th>WT13</th>
+      <th>WT14</th>
+      <th>WT15</th>
+      <th>WT16</th>
+      <th>WT17</th>
+      <th>WT18</th>
+      <th>WT21</th>
+      <th>WT22</th>
+      <th>WV01</th>
+    </tr>
+    <tr>
+      <th>DATE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1970-01-01</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>80.0</td>
+      <td>90.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1970-01-02</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>30.0</td>
+      <td>20.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1970-01-03</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>80.0</td>
+      <td>100.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.02</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1970-01-04</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>10.0</td>
+      <td>20.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1970-01-05</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>30.0</td>
+      <td>10.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2022-10-17</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9.62</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.08</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2022-10-18</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.08</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2022-10-19</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14.99</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2022-10-20</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>16.78</td>
+      <td>NaN</td>
+      <td>10.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2022-10-21</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>19287 rows × 44 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">null_pct</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="n">weather</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">null_pct</span>
+<span class="c1">#finds the number of null values in each colomn </span>
+<span class="c1">#then divides it by the total number of rows </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>STATION    0.000000
+NAME       0.000000
+ACMH       0.501478
+ACSH       0.501426
+AWND       0.265256
+FMTM       0.475087
+PGTM       0.363872
+PRCP       0.000000
+SNOW       0.000000
+SNWD       0.000104
+TAVG       0.680406
+TMAX       0.000000
+TMIN       0.000000
+TSUN       0.998393
+WDF1       0.501685
+WDF2       0.498678
+WDF5       0.502981
+WDFG       0.734484
+WDFM       0.999948
+WESD       0.685228
+WSF1       0.501530
+WSF2       0.498678
+WSF5       0.503033
+WSFG       0.613055
+WSFM       0.999948
+WT01       0.630217
+WT02       0.935034
+WT03       0.933271
+WT04       0.982579
+WT05       0.981127
+WT06       0.990615
+WT07       0.994400
+WT08       0.796962
+WT09       0.992741
+WT11       0.999274
+WT13       0.886711
+WT14       0.954010
+WT15       0.997822
+WT16       0.658993
+WT17       0.996889
+WT18       0.939493
+WT21       0.999741
+WT22       0.997459
+WV01       0.999948
+dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">valid_columns</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">null_pct</span> <span class="o">&lt;</span> <span class="o">.</span><span class="mi">05</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">valid_columns</span>
+<span class="c1">#these are the colomns with less than 5% missing values </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Index([&#39;STATION&#39;, &#39;NAME&#39;, &#39;PRCP&#39;, &#39;SNOW&#39;, &#39;SNWD&#39;, &#39;TMAX&#39;, &#39;TMIN&#39;], dtype=&#39;object&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="n">weather</span><span class="p">[</span><span class="n">valid_columns</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="c1">#preserves only the above colomns in our data</span>
+<span class="c1">#.copy() prevents us from getting a copy warning later</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>station</th>
+      <th>name</th>
+      <th>prcp</th>
+      <th>snow</th>
+      <th>snwd</th>
+      <th>tmax</th>
+      <th>tmin</th>
+    </tr>
+    <tr>
+      <th>DATE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1970-01-01</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>28</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>1970-01-02</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>31</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>1970-01-03</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.02</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>38</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>1970-01-04</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>31</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>1970-01-05</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>35</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2022-10-17</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.08</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>67</td>
+      <td>54</td>
+    </tr>
+    <tr>
+      <th>2022-10-18</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>58</td>
+      <td>48</td>
+    </tr>
+    <tr>
+      <th>2022-10-19</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>56</td>
+      <td>43</td>
+    </tr>
+    <tr>
+      <th>2022-10-20</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>61</td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <th>2022-10-21</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>64</td>
+      <td>43</td>
+    </tr>
+  </tbody>
+</table>
+<p>19287 rows × 7 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+<span class="c1">#for example if the last day had a snow depth of 0, then the next day would also probably have a snow depth of zero too</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="c1">#now we can see that all the missing values have been filled and we have 0 missing values</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>station    0
+name       0
+prcp       0
+snow       0
+snwd       0
+tmax       0
+tmin       0
+dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">dtypes</span>
+<span class="c1">#everything is stored as the correct type here</span>
+<span class="c1">#object data type usually indicates that the colomn is a string </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>station     object
+name        object
+prcp       float64
+snow       float64
+snwd       float64
+tmax         int64
+tmin         int64
+dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">index</span>
+<span class="c1">#we can see that our index is stored as a object </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Index([&#39;1970-01-01&#39;, &#39;1970-01-02&#39;, &#39;1970-01-03&#39;, &#39;1970-01-04&#39;, &#39;1970-01-05&#39;,
+       &#39;1970-01-06&#39;, &#39;1970-01-07&#39;, &#39;1970-01-08&#39;, &#39;1970-01-09&#39;, &#39;1970-01-10&#39;,
+       ...
+       &#39;2022-10-12&#39;, &#39;2022-10-13&#39;, &#39;2022-10-14&#39;, &#39;2022-10-15&#39;, &#39;2022-10-16&#39;,
+       &#39;2022-10-17&#39;, &#39;2022-10-18&#39;, &#39;2022-10-19&#39;, &#39;2022-10-20&#39;, &#39;2022-10-21&#39;],
+      dtype=&#39;object&#39;, name=&#39;DATE&#39;, length=19287)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">weather</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">index</span>
+<span class="c1">#now we can see that our index is stored as a date time</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>DatetimeIndex([&#39;1970-01-01&#39;, &#39;1970-01-02&#39;, &#39;1970-01-03&#39;, &#39;1970-01-04&#39;,
+               &#39;1970-01-05&#39;, &#39;1970-01-06&#39;, &#39;1970-01-07&#39;, &#39;1970-01-08&#39;,
+               &#39;1970-01-09&#39;, &#39;1970-01-10&#39;,
+               ...
+               &#39;2022-10-12&#39;, &#39;2022-10-13&#39;, &#39;2022-10-14&#39;, &#39;2022-10-15&#39;,
+               &#39;2022-10-16&#39;, &#39;2022-10-17&#39;, &#39;2022-10-18&#39;, &#39;2022-10-19&#39;,
+               &#39;2022-10-20&#39;, &#39;2022-10-21&#39;],
+              dtype=&#39;datetime64[ns]&#39;, name=&#39;DATE&#39;, length=19287, freq=None)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
+<span class="c1">#this gives us the year componenet of our data, you can&#39;t easily do this with a string</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Int64Index([1970, 1970, 1970, 1970, 1970, 1970, 1970, 1970, 1970, 1970,
+            ...
+            2022, 2022, 2022, 2022, 2022, 2022, 2022, 2022, 2022, 2022],
+           dtype=&#39;int64&#39;, name=&#39;DATE&#39;, length=19287)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="c1">#it sorts the index in order by year</span>
+<span class="c1">#counts how many times each unique value occurs, sees how many records we have for each year</span>
+<span class="c1">#should be either 365 or 366 (for leap years)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1970    365
+1971    365
+1972    366
+1973    365
+1974    365
+1975    365
+1976    366
+1977    365
+1978    365
+1979    365
+1980    366
+1981    365
+1982    365
+1983    365
+1984    366
+1985    365
+1986    365
+1987    365
+1988    366
+1989    365
+1990    365
+1991    365
+1992    366
+1993    365
+1994    365
+1995    365
+1996    366
+1997    365
+1998    365
+1999    365
+2000    366
+2001    365
+2002    365
+2003    365
+2004    366
+2005    365
+2006    365
+2007    365
+2008    366
+2009    365
+2010    365
+2011    365
+2012    366
+2013    365
+2014    365
+2015    365
+2016    366
+2017    365
+2018    365
+2019    365
+2020    366
+2021    365
+2022    294
+Name: DATE, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="p">[</span><span class="s2">&quot;snwd&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="c1">#creates car graph that shows snow depth by day</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;AxesSubplot:xlabel=&#39;DATE&#39;&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)[</span><span class="s2">&quot;tmax&quot;</span><span class="p">]</span>
+<span class="c1">#creating a target colomn in the weather data for predictions</span>
+<span class="c1">#shift method keeps the same method but pulls value from the next row</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span>
+<span class="c1">#for example Jan 1&#39;s target is Jan 2&#39;s Tmax</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>station</th>
+      <th>name</th>
+      <th>prcp</th>
+      <th>snow</th>
+      <th>snwd</th>
+      <th>tmax</th>
+      <th>tmin</th>
+      <th>target</th>
+    </tr>
+    <tr>
+      <th>DATE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1970-01-01</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>28</td>
+      <td>22</td>
+      <td>31.0</td>
+    </tr>
+    <tr>
+      <th>1970-01-02</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>31</td>
+      <td>22</td>
+      <td>38.0</td>
+    </tr>
+    <tr>
+      <th>1970-01-03</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.02</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>38</td>
+      <td>25</td>
+      <td>31.0</td>
+    </tr>
+    <tr>
+      <th>1970-01-04</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>31</td>
+      <td>23</td>
+      <td>35.0</td>
+    </tr>
+    <tr>
+      <th>1970-01-05</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>35</td>
+      <td>21</td>
+      <td>36.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2022-10-17</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.08</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>67</td>
+      <td>54</td>
+      <td>58.0</td>
+    </tr>
+    <tr>
+      <th>2022-10-18</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>58</td>
+      <td>48</td>
+      <td>56.0</td>
+    </tr>
+    <tr>
+      <th>2022-10-19</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>56</td>
+      <td>43</td>
+      <td>61.0</td>
+    </tr>
+    <tr>
+      <th>2022-10-20</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>61</td>
+      <td>44</td>
+      <td>64.0</td>
+    </tr>
+    <tr>
+      <th>2022-10-21</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>64</td>
+      <td>43</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>19287 rows × 8 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+<span class="c1">#fill the vaule</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span>
+<span class="c1">#one row having an incorrect target value will be insignificant with 20,000 rows in total</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>station</th>
+      <th>name</th>
+      <th>prcp</th>
+      <th>snow</th>
+      <th>snwd</th>
+      <th>tmax</th>
+      <th>tmin</th>
+      <th>target</th>
+    </tr>
+    <tr>
+      <th>DATE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1970-01-01</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>28</td>
+      <td>22</td>
+      <td>31.0</td>
+    </tr>
+    <tr>
+      <th>1970-01-02</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>31</td>
+      <td>22</td>
+      <td>38.0</td>
+    </tr>
+    <tr>
+      <th>1970-01-03</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.02</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>38</td>
+      <td>25</td>
+      <td>31.0</td>
+    </tr>
+    <tr>
+      <th>1970-01-04</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>31</td>
+      <td>23</td>
+      <td>35.0</td>
+    </tr>
+    <tr>
+      <th>1970-01-05</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>35</td>
+      <td>21</td>
+      <td>36.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2022-10-17</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.08</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>67</td>
+      <td>54</td>
+      <td>58.0</td>
+    </tr>
+    <tr>
+      <th>2022-10-18</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>58</td>
+      <td>48</td>
+      <td>56.0</td>
+    </tr>
+    <tr>
+      <th>2022-10-19</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>56</td>
+      <td>43</td>
+      <td>61.0</td>
+    </tr>
+    <tr>
+      <th>2022-10-20</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>61</td>
+      <td>44</td>
+      <td>64.0</td>
+    </tr>
+    <tr>
+      <th>2022-10-21</th>
+      <td>USW00094789</td>
+      <td>JFK INTERNATIONAL AIRPORT, NY US</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>64</td>
+      <td>43</td>
+      <td>64.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>19287 rows × 8 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span>
+<span class="c1">#apply ridge regression model</span>
+<span class="c1">#&quot;Ridge regression is a model tuning method that is used to analyse any data that suffers from multicollinearity&quot;</span>
+<span class="c1">#&quot;Multicollinearity is a statistical concept where several independent variables in a model are correlated&quot;</span>
+<span class="c1">#ridge regression is similar to linear regression except that it penalizes coefficients to account for multicollinearity</span>
+
+<span class="n">rr</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#alpha parameter controls how much coefficeints are shrunk</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="c1">#checking for correlation between colomns</span>
+<span class="c1">#can see that preceptiation is pretty uncorrelated from the rest of colomns</span>
+<span class="c1">#but the rest are correlated to each other</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>prcp</th>
+      <th>snow</th>
+      <th>snwd</th>
+      <th>tmax</th>
+      <th>tmin</th>
+      <th>target</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>prcp</th>
+      <td>1.000000</td>
+      <td>0.151051</td>
+      <td>0.001178</td>
+      <td>-0.007210</td>
+      <td>0.052279</td>
+      <td>-0.003358</td>
+    </tr>
+    <tr>
+      <th>snow</th>
+      <td>0.151051</td>
+      <td>1.000000</td>
+      <td>0.232567</td>
+      <td>-0.175075</td>
+      <td>-0.159285</td>
+      <td>-0.172737</td>
+    </tr>
+    <tr>
+      <th>snwd</th>
+      <td>0.001178</td>
+      <td>0.232567</td>
+      <td>1.000000</td>
+      <td>-0.259858</td>
+      <td>-0.256977</td>
+      <td>-0.241054</td>
+    </tr>
+    <tr>
+      <th>tmax</th>
+      <td>-0.007210</td>
+      <td>-0.175075</td>
+      <td>-0.259858</td>
+      <td>1.000000</td>
+      <td>0.955487</td>
+      <td>0.915296</td>
+    </tr>
+    <tr>
+      <th>tmin</th>
+      <td>0.052279</td>
+      <td>-0.159285</td>
+      <td>-0.256977</td>
+      <td>0.955487</td>
+      <td>1.000000</td>
+      <td>0.915461</td>
+    </tr>
+    <tr>
+      <th>target</th>
+      <td>-0.003358</td>
+      <td>-0.172737</td>
+      <td>-0.241054</td>
+      <td>0.915296</td>
+      <td>0.915461</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">predictors</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="o">~</span><span class="n">weather</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;target&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;station&quot;</span><span class="p">])]</span>
+<span class="c1">#create a list of predictor colomns </span>
+<span class="c1">#gives all the colomns in weather data except for these 3</span>
+<span class="c1"># ~ negative operator looks for colomns not in the list</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">predictors</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Index([&#39;prcp&#39;, &#39;snow&#39;, &#39;snwd&#39;, &#39;tmax&#39;, &#39;tmin&#39;], dtype=&#39;object&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">backtest</span><span class="p">(</span><span class="n">weather</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">predictors</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">3650</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">90</span><span class="p">):</span>
+    <span class="n">all_predictions</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">weather</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">step</span><span class="p">):</span>
+        <span class="n">train</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="n">i</span><span class="p">,:]</span>
+        <span class="n">test</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">:(</span><span class="n">i</span><span class="o">+</span><span class="n">step</span><span class="p">),:]</span>
+        
+        <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="n">predictors</span><span class="p">],</span> <span class="n">train</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">])</span>
+        
+        <span class="n">preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="n">predictors</span><span class="p">])</span>
+        <span class="n">preds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">test</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="n">combined</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">test</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">],</span> <span class="n">preds</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">combined</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;actual&quot;</span><span class="p">,</span> <span class="s2">&quot;prediction&quot;</span><span class="p">]</span>
+        <span class="n">combined</span><span class="p">[</span><span class="s2">&quot;diff&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">combined</span><span class="p">[</span><span class="s2">&quot;prediction&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">combined</span><span class="p">[</span><span class="s2">&quot;actual&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+        
+        <span class="n">all_predictions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">combined</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">all_predictions</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">backtest</span><span class="p">(</span><span class="n">weather</span><span class="p">,</span> <span class="n">rr</span><span class="p">,</span> <span class="n">predictors</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">mean_squared_error</span>
+
+<span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">predictions</span><span class="p">[</span><span class="s2">&quot;actual&quot;</span><span class="p">],</span> <span class="n">predictions</span><span class="p">[</span><span class="s2">&quot;prediction&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>5.13932667966084</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">predictions</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;diff&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>actual</th>
+      <th>prediction</th>
+      <th>diff</th>
+    </tr>
+    <tr>
+      <th>DATE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2007-03-26</th>
+      <td>78.0</td>
+      <td>49.744725</td>
+      <td>28.255275</td>
+    </tr>
+    <tr>
+      <th>1999-01-02</th>
+      <td>53.0</td>
+      <td>25.911898</td>
+      <td>27.088102</td>
+    </tr>
+    <tr>
+      <th>1998-03-26</th>
+      <td>80.0</td>
+      <td>53.033957</td>
+      <td>26.966043</td>
+    </tr>
+    <tr>
+      <th>1985-04-18</th>
+      <td>84.0</td>
+      <td>57.071179</td>
+      <td>26.928821</td>
+    </tr>
+    <tr>
+      <th>1990-03-12</th>
+      <td>85.0</td>
+      <td>58.144310</td>
+      <td>26.855690</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2006-08-20</th>
+      <td>88.0</td>
+      <td>88.002937</td>
+      <td>0.002937</td>
+    </tr>
+    <tr>
+      <th>2019-03-01</th>
+      <td>40.0</td>
+      <td>40.002460</td>
+      <td>0.002460</td>
+    </tr>
+    <tr>
+      <th>1992-06-11</th>
+      <td>76.0</td>
+      <td>76.001641</td>
+      <td>0.001641</td>
+    </tr>
+    <tr>
+      <th>2011-09-16</th>
+      <td>66.0</td>
+      <td>66.000831</td>
+      <td>0.000831</td>
+    </tr>
+    <tr>
+      <th>2014-03-25</th>
+      <td>39.0</td>
+      <td>38.999920</td>
+      <td>0.000080</td>
+    </tr>
+  </tbody>
+</table>
+<p>15637 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/alicetang/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://tangalice.github.io/alicetang/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/alicetang/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/exampleUser" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/alicetang/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/exampleUser" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/alicetang/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
