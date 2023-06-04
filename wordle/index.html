@@ -351,19 +351,19 @@
 
     // Function to add a new row
     function addRow() {
-        var inputRow = document.createElement('tr');
+    var inputRow = document.createElement('tr');
     
-        // Create input cells
-        for (var j = 0; j < headers.length; j++) {
-            var inputCell = document.createElement('td');
-            var input = document.createElement('input');
-            input.type = 'text';
-            input.className = 'input-field';
-            inputCell.appendChild(input);
-            inputRow.appendChild(inputCell);
-        }
+    // Create input cells
+    for (var j = 0; j < headers.length; j++) {
+        var inputCell = document.createElement('td');
+        var input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'input-field';
+        inputCell.appendChild(input);
+        inputRow.appendChild(inputCell);
+    }
     
-        tbody.appendChild(inputRow);
+    tbody.appendChild(inputRow);
     }
 
     // Add initial row
