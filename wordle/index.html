@@ -337,7 +337,7 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>DOB</th>
+            <th>Score</th>
             <th>Age</th>
         </tr>
     </thead>
@@ -346,7 +346,7 @@
 
 <script>
     $(document).ready(function() {
-    fetch('http://localhost:8230/api/nut/', { mode: 'cors' })
+    fetch('https://flask.nighthawkcodingsociety.com/api/users/', { mode: 'cors' })
     .then(response => {
         if (!response.ok) {
         throw new Error('API response failed');
@@ -358,9 +358,9 @@
             // BUG warning/resolution - DataTable requires row to be single append
             $('#flaskBody').append('<tr><td>' + 
                 row.id + '</td><td>' + 
-                row.food + '</td><td>' + 
-                row.calories + '</td><td>' + 
-                row.category + '</td></tr>');
+                row.name + '</td><td>' + 
+                row.dob + '</td><td>' + 
+                row.age + '</td></tr>');
         }      
       // BUG warning - Jupyter does not show Datatable controls, works on deployed GitHub pages
       $("#flaskTable").DataTable();
