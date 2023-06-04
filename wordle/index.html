@@ -18,10 +18,7 @@
 
 <br />
 <h1 id="answer"></h1>
-<div id="keyboard">
-<div id="table">
-&lt;/body&gt;
-
+</body>
 
 <script>
     var height = 6; //number of guesses
@@ -60,7 +57,6 @@
             }
         }
 
-        document.getElementById("keyboard") = keyboard;
 
         // Create the key board
         let keyboard = [
@@ -330,11 +326,9 @@
     }
 </style>
 
-
 <script>
     // Create a table element with CSS class
-    var table = document.getElementById("table");
-    //var table = document.createElement('table');
+    var table = document.createElement('table');
     table.className = 'data-table';
 
     // Create table header
@@ -402,4 +396,4 @@
         padding: 5px;
     }
 </style>
-</div></div></body>
+
