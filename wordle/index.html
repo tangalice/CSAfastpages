@@ -334,7 +334,7 @@
     // Create table header
     var thead = document.createElement('thead');
     var headerRow = document.createElement('tr');
-    var headers = ['Name', 'Age', 'Email'];
+    var headers = ['Name', 'Age', 'Score'];
 
     // Create table header cells
     headers.forEach(function(headerText) {
@@ -347,7 +347,7 @@
     table.appendChild(thead);
 
     // Create table body
-    var tbody = document.createElement('tbody');
+    //var tbody = document.createElement('tbody');
 
     // Function to add a new row
     function addRow() {
@@ -355,16 +355,15 @@
         
         // Create input cells
         for (var j = 0; j < headers.length; j++) {
-            /*var inputCell = document.createElement('td');
+            var inputCell = document.createElement('td');
             var input = document.createElement('input');
             input.type = 'text';
             input.className = 'input-field';
             inputCell.appendChild(input);
-            inputRow.appendChild(inputCell);*/
-            alert("hi");
+            inputRow.appendChild(inputCell);
         }
         
-        tbody.appendChild(inputRow);
+        table.appendChild(inputRow);
     }
 
     // Add initial row
