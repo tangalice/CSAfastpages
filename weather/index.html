@@ -39,27 +39,28 @@
 
     // Function to read the CSV file
     function readCSVFile(weather-input) {
-    var reader = new FileReader();
+        var file = fileInput.files[0];
+        var reader = new FileReader();
 
-    // Callback function when the file is loaded
-    reader.onload = function(event) {
-        var csvData = event.target.result;
-        var table = parseCSV(csvData);
+        // Callback function when the file is loaded
+        reader.onload = function(event) {
+            var csvData = event.target.result;
+            var table = parseCSV(csvData);
 
-        // Get the container element for the table
-        var tableContainer = document.getElementById("table-container");
+            // Get the container element for the table
+            var tableContainer = document.getElementById("table-container");
 
-        // Append the table to the container
-        tableContainer.appendChild(table);
-    };
+            // Remove any existing table
+            while (tableContainer.firstChild) {
+            tableContainer.removeChild(tableContainer.firstChild);
+            }
 
-    // Read the file as text
-    reader.readAsText(file); }
+            // Append the table to the container
+            tableContainer.appendChild(table);
+        };
 
-        // Function to handle file input change
-        function handleFileInputChange(event) {
-        var file = event.target.files[0];
-        readCSVFile(file);
+        // Read the file as text
+        reader.readAsText(file);
     }
 </script>
 
