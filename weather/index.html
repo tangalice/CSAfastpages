@@ -1,0 +1,65 @@
+<html>
+    <input type="file" onchange="handleFileInputChange(event)" accept=".csv" name="weather" id="weather-input" directory="/Users/alicetang/Documents/CompSci/csa/alicetang/_notebooks/weather.csv" />
+    <div id="table-container"></div>
+</html>
+
+<script>
+    // Assuming you have a CSV file named "data.csv" with comma-separated values
+    // and an empty HTML table with the id "table-container" in your HTML file.
+
+    // Function to parse CSV data
+    function parseCSV(csvData) {
+    // Split the CSV data into rows
+    var rows = csvData.split("\n");
+
+    // Create the table element
+    var table = document.createElement("table");
+
+    // Iterate through each row
+    rows.forEach(function(rowData) {
+        var row = document.createElement("tr");
+
+        // Split the row into columns
+        var columns = rowData.split(",");
+
+        // Iterate through each column
+        columns.forEach(function(columnData) {
+        var column = document.createElement("td");
+        column.textContent = columnData;
+        row.appendChild(column);
+        });
+
+        // Append the row to the table
+        table.appendChild(row);
+    });
+
+    // Return the generated table
+    return table;
+    }
+
+    // Function to read the CSV file
+    function readCSVFile(weather-input) {
+    var reader = new FileReader();
+
+    // Callback function when the file is loaded
+    reader.onload = function(event) {
+        var csvData = event.target.result;
+        var table = parseCSV(csvData);
+
+        // Get the container element for the table
+        var tableContainer = document.getElementById("table-container");
+
+        // Append the table to the container
+        tableContainer.appendChild(table);
+    };
+
+    // Read the file as text
+    reader.readAsText(file); }
+
+        // Function to handle file input change
+        function handleFileInputChange(event) {
+        var file = event.target.files[0];
+        readCSVFile(file);
+    }
+</script>
+
